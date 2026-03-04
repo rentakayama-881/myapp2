@@ -7,6 +7,27 @@ Next.js frontend untuk `aivalid.id`.
 - `/` -> modular landing page (batch UI utama)
 - `/playground` -> tester untuk endpoint scraper/crawler
 
+## Typography Policy (Global)
+
+Gunakan semantic typography classes dari `apps/web/app/globals.css` untuk semua halaman baru:
+
+- `type-overline`
+- `type-caption`
+- `type-label`
+- `type-body`
+- `type-body-strong`
+- `type-title`
+- `type-display`
+
+Exception yang diizinkan:
+
+- `type-data` untuk data numerik/table
+- `type-code` untuk snippet/kode
+
+Validasi policy:
+
+- `pnpm --filter @myapp/web typography:check`
+
 ## Editable Landing Content
 
 Ubah konten tanpa sentuh komponen di file:
@@ -35,4 +56,5 @@ pnpm --filter @myapp/web dev
 pnpm --filter @myapp/web build
 pnpm --filter @myapp/web lint
 pnpm --filter @myapp/web typecheck
+pnpm --filter @myapp/web typography:check
 ```

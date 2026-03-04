@@ -60,3 +60,39 @@
     linear-gradient(180deg, oklch(0.995 0 0 / 94%), oklch(0.985 0.004 95 / 92%)),
     radial-gradient(circle at 50% 10%, oklch(0.95 0.02 255 / 40%) 0, transparent 55%);
 }
+
+@utility type-overline {
+  @apply text-[10px] leading-tight font-medium uppercase tracking-[0.16em] text-muted-foreground;
+}
+
+@utility type-caption {
+  @apply text-[11px] leading-tight text-muted-foreground;
+}
+
+@utility type-label {
+  @apply text-xs leading-tight font-medium;
+}
+
+@utility type-body {
+  @apply text-xs leading-relaxed text-muted-foreground;
+}
+
+@utility type-body-strong {
+  @apply text-xs leading-relaxed font-medium;
+}
+
+@utility type-title {
+  @apply text-lg leading-tight font-semibold tracking-tight;
+}
+
+@utility type-display {
+  @apply text-2xl leading-tight font-semibold tracking-tight;
+}
+
+@utility type-data {
+  @apply text-sm leading-tight font-medium;
+}
+
+@utility type-code {
+  @apply text-xs leading-snug font-mono;
+}

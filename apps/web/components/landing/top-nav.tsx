@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { MarketingIcons } from '../icons/marketing-icons';
 import type { LandingContent } from '../../types/landing';
+import { MarketingIcons } from '../icons/marketing-icons';
+import { landingTypography } from './landing-typography';
 
 interface TopNavProps {
   brandName: LandingContent['brandName'];
@@ -23,21 +24,31 @@ export function TopNav({
             <MarketingIcons.brandMark className="size-5" />
           </span>
           <span className="grid leading-tight">
-            <span className="text-sm font-semibold tracking-tight">{brandName}</span>
-            <span className="text-xs text-muted-foreground">{brandTagline}</span>
+            <span className={landingTypography.label + ' tracking-tight text-foreground'}>
+              {brandName}
+            </span>
+            <span className={landingTypography.caption}>{brandTagline}</span>
           </span>
         </Link>
 
         <nav className="flex items-center gap-2">
           <Link
             href={primaryAction.href}
-            className="inline-flex h-9 items-center rounded-lg border border-border bg-card px-3 text-sm font-medium text-foreground transition hover:bg-muted"
+            className={
+              'inline-flex h-9 items-center rounded-lg border border-border bg-card px-3 transition hover:bg-muted ' +
+              landingTypography.label +
+              ' text-foreground'
+            }
           >
             {primaryAction.label}
           </Link>
           <Link
             href={secondaryAction.href}
-            className="inline-flex h-9 items-center rounded-lg bg-primary px-3 text-sm font-medium text-primary-foreground transition hover:opacity-90"
+            className={
+              'inline-flex h-9 items-center rounded-lg bg-primary px-3 transition hover:opacity-90 ' +
+              landingTypography.label +
+              ' text-primary-foreground'
+            }
           >
             {secondaryAction.label}
           </Link>

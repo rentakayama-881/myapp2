@@ -1,5 +1,6 @@
-import { MarketingIcon } from '../icons/marketing-icons';
 import type { LandingFeature } from '../../types/landing';
+import { MarketingIcon } from '../icons/marketing-icons';
+import { landingTypography } from './landing-typography';
 
 interface FeaturesSectionProps {
   features: LandingFeature[];
@@ -10,11 +11,12 @@ export function FeaturesSection({ features }: FeaturesSectionProps) {
     <section className="border-b border-border/60 bg-card/30">
       <div className="landing-container py-16 md:py-20">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+          <h2 className={`text-foreground ${landingTypography.title}`}>
             Fondasi validasi AI yang bisa kamu kembangkan
           </h2>
-          <p className="mt-4 text-base text-muted-foreground">
-            Struktur sementara ini sengaja modular agar konten dan komponen bisa kamu edit cepat tanpa bongkar layout.
+          <p className={`mt-4 ${landingTypography.body}`}>
+            Struktur sementara ini sengaja modular agar konten dan komponen bisa
+            kamu edit cepat tanpa bongkar layout.
           </p>
         </div>
 
@@ -27,10 +29,12 @@ export function FeaturesSection({ features }: FeaturesSectionProps) {
               <span className="inline-flex size-10 items-center justify-center rounded-xl border border-border bg-card text-foreground">
                 <MarketingIcon name={feature.icon} className="size-5" />
               </span>
-              <h3 className="mt-4 text-lg font-semibold tracking-tight text-foreground">
+              <h3
+                className={`mt-4 tracking-tight text-foreground ${landingTypography.bodyStrong}`}
+              >
                 {feature.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              <p className={`mt-2 ${landingTypography.caption}`}>
                 {feature.description}
               </p>
             </article>

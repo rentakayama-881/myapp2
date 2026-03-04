@@ -12,6 +12,7 @@
     "start": "next start --port 3000",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
+    "typography:check": "node ./scripts/check-typography.mjs",
     "test": "echo \"No tests yet\""
   },
   "dependencies": {
