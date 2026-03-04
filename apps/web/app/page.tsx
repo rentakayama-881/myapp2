@@ -26,20 +26,21 @@ export default function Page() {
       <header className="relative z-10">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6">
           <div className="flex items-center gap-2">
-            <div className="h-7 w-7 rounded-lg bg-white/90" />
+            <div className="h-7 w-7 rounded-[10px] bg-white/90" />
             <span className="text-sm font-semibold tracking-tight">YourBrand</span>
           </div>
 
           <div className="flex items-center gap-3">
+            {/* Dirstarter-like pill */}
             <a
               href="#pricing"
-              className="hidden sm:inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/[0.08] px-4 py-2 text-sm font-medium text-white/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.10)] backdrop-blur transition hover:bg-white/[0.12]"
+              className="hidden sm:inline-flex items-center justify-center rounded-[999px] border border-white/20 bg-white/90 px-4 py-2 text-sm font-medium text-black shadow-[0_1px_0_rgba(255,255,255,0.35),0_12px_40px_rgba(0,0,0,0.35)] transition hover:bg-white"
             >
               Get Lifetime Access
             </a>
 
             <button
-              className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/[0.06] p-2 text-white/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.10)] backdrop-blur transition hover:bg-white/[0.10]"
+              className="inline-flex items-center justify-center rounded-[12px] border border-white/15 bg-white/[0.06] p-2 text-white/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.10)] backdrop-blur transition hover:bg-white/[0.10]"
               aria-label="Open menu"
             >
               <div className="space-y-1">
@@ -72,27 +73,27 @@ export default function Page() {
             {/* Primary button with subtle gradient stroke */}
             <a
               href="#pricing"
-              className="group inline-flex w-full sm:w-auto rounded-xl p-[1px] bg-gradient-to-r from-white/20 via-white/10 to-white/20"
+              className="group inline-flex w-full sm:w-auto rounded-[12px] p-[1px] bg-gradient-to-r from-white/25 via-white/10 to-white/25"
             >
-              <span className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-black transition group-hover:opacity-95">
+              <span className="inline-flex w-full items-center justify-center gap-2 rounded-[12px] bg-white px-6 py-3 text-sm font-semibold text-black transition group-hover:opacity-95">
                 Get Lifetime Access <span aria-hidden>→</span>
               </span>
             </a>
 
             <a
               href="#features"
-              className="inline-flex w-full sm:w-auto items-center justify-center rounded-xl border border-white/15 bg-white/[0.06] px-6 py-3 text-sm font-medium text-white/85 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur transition hover:bg-white/[0.10]"
+              className="inline-flex w-full sm:w-auto items-center justify-center rounded-[12px] border border-white/15 bg-white/[0.06] px-6 py-3 text-sm font-medium text-white/85 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur transition hover:bg-white/[0.10]"
             >
               View Features
             </a>
           </div>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm text-white/55">
-            <span className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.06] px-3 py-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur">
+            <span className="inline-flex items-center gap-2 rounded-[999px] border border-white/10 bg-white/[0.06] px-3 py-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur">
               🎁 <span className="text-emerald-300">20% off</span>
             </span>
             <span>first 200 customers</span>
-            <span className="rounded-xl bg-white/[0.08] px-2 py-1 text-xs shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+            <span className="rounded-[999px] bg-white/[0.08] px-2 py-1 text-xs shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
               3 left
             </span>
           </div>
@@ -108,9 +109,9 @@ export default function Page() {
             ].map(([title, desc]) => (
               <div
                 key={title}
-                className="group rounded-2xl border border-white/10 bg-white/[0.06] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/[0.09]"
+                className="group rounded-[16px] border border-white/10 bg-white/[0.06] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/[0.09]"
               >
-                <div className="mb-4 h-10 w-10 rounded-xl border border-white/10 bg-white/[0.06] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]" />
+                <div className="mb-4 h-10 w-10 rounded-[10px] border border-white/10 bg-white/[0.06] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]" />
                 <h3 className="text-lg font-semibold tracking-tight">{title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-white/60">{desc}</p>
                 <div className="mt-6 h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent opacity-0 transition group-hover:opacity-100" />
@@ -137,11 +138,11 @@ export default function Page() {
             ].map((q) => (
               <details
                 key={q}
-                className="rounded-2xl border border-white/10 bg-white/[0.06] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur open:bg-white/[0.09]"
+                className="rounded-[14px] border border-white/10 bg-white/[0.06] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur open:bg-white/[0.09]"
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-medium text-white/85">
                   {q}
-                  <span className="ml-4 rounded-lg border border-white/10 bg-white/[0.06] px-2 py-1 text-xs text-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+                  <span className="ml-4 rounded-[10px] border border-white/10 bg-white/[0.06] px-2 py-1 text-xs text-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
                     +
                   </span>
                 </summary>

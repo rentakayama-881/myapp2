@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
   --radius: 0.75rem;
   --background: oklch(0.985 0.004 95);
   --foreground: oklch(0.2 0.02 260);
@@ -96,3 +96,8 @@
 @utility type-code {
   @apply text-xs leading-snug font-mono;
 }
+@utility r-pill { border-radius: 999px; }
+@utility r-10 { border-radius: 10px; }
+@utility r-12 { border-radius: 12px; }
+@utility r-14 { border-radius: 14px; }
+@utility r-16 { border-radius: 16px; }
