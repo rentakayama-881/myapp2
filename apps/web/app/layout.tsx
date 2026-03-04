@@ -2,8 +2,12 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'myapp',
-  description: 'Fresh template: Next.js + Tailwind + NestJS + Prisma',
+  title: {
+    default: 'aivalid.id',
+    template: '%s | aivalid.id',
+  },
+  description:
+    'Platform validasi output AI untuk membantu pengguna memastikan hasil lebih akurat sebelum dieksekusi.',
 };
 
 export default function RootLayout({
@@ -12,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="id">
       <body>{children}</body>
     </html>
   );
