@@ -10,7 +10,7 @@ export function StackSection({ stack }: StackSectionProps) {
     <section className="light w-full scroll-mt-8 bg-white py-fluid-lg text-foreground">
       <div className="container flex flex-col gap-fluid-sm">
         <div className="flex w-full flex-col items-center gap-y-4 text-center">
-          <div className="-mb-2 font-mono text-[12px] font-medium text-foreground/50 uppercase tracking-wider">
+          <div className="font-mono font-medium tracking-wider text-foreground/50 uppercase [&[href]]:hover:text-foreground/75 text-[12px] -mb-2">
             {stack.overline}
           </div>
           <h2 className="font-display text-pretty text-3xl font-medium tracking-tighter md:text-4xl">
@@ -26,6 +26,7 @@ export function StackSection({ stack }: StackSectionProps) {
               <Image
                 key={item.label}
                 alt={item.label}
+                data-state="closed"
                 loading="lazy"
                 width="360"
                 height={item.height}

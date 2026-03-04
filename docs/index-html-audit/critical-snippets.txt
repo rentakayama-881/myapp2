@@ -1,0 +1,228 @@
+### HEADER_BLOCK
+header class="sticky top-0 z-49 duration-100">
+nav class="container flex items-center gap-4 py-4 h-nav md:gap-6 lg:gap-8">
+a class="flex gap-x-2 gap-y-1 flex-row items-center place-content-start text-sm hover:opacity-70" href="#" onclick="window.openModal()">
+svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 251" role="img" aria-label="Logo" class="w-auto fill-current h-[1.2em]">
+path d="M0 105v93c0 3.18.29 6.35 2.53 8.6l42.25 42.24C48.56 252.62 55 250.34 55 245v-93c0-3.19-1.05-6.36-3.31-8.62l-42.6-42.6C5.28 96.97-.02 99.64 0 105Zm74-49v132c0 3.18.79 6.14 3.03 8.38l42.25 42.24c3.77 3.78 10.72.73 10.72-4.62V103c0-3.18-1.55-6.5-3.8-8.76L83.56 51.62C79.8 47.84 74 50.66 74 56Zm74-50v155c0 3.18.84 6.6 3.08 8.85l54.99 54.98c3.78 3.78 9.93 1.02 9.93-4.33v-155c0-3.18-.76-6.1-3.01-8.36L157.62 1.77C153.84-2 148 .66 148 6Z">
+/path>
+/svg>
+span class="font-semibold">Dirstarter
+/span>
+/a>
+span class="w-0.5 h-4 bg-ring rotate-25 max-lg:hidden">
+/span>
+div class="flex flex-wrap items-center gap-x-4 flex-1 max-lg:hidden lg:gap-x-6">
+a class="font-medium text-foreground hover:text-secondary-foreground text-sm" href="#" onclick="window.openModal()">Pricing
+/a>
+a class="font-medium text-foreground hover:text-secondary-foreground text-sm" href="#" onclick="window.openModal()">Showcase
+/a>
+a class="font-medium text-foreground hover:text-secondary-foreground text-sm" href="#" onclick="window.openModal()">Testimonials
+/a>
+a class="font-medium text-foreground hover:text-secondary-foreground text-sm" href="#" onclick="window.openModal()">Affiliates
+/a>
+a class="font-medium text-foreground hover:text-secondary-foreground text-sm" href="#" onclick="window.openModal()">Changelog
+/a>
+a class="font-medium text-foreground hover:text-secondary-foreground text-sm" href="#" onclick="window.openModal()">Docs
+/a>
+a target="_blank" class="font-medium text-foreground hover:text-secondary-foreground text-sm md:hidden" href="#" onclick="window.openModal()">Demo
+/a>
+/div>
+div class="flex gap-x-2 gap-y-1 flex-row items-center place-content-start ml-auto">
+a href="#" target="_blank" rel="noopener" class="group/button inline-flex items-center justify-center font-medium text-[0.8125rem] text-start leading-tight whitespace-nowrap hover:z-10 disabled:opacity-60 disabled:pointer-events-none text-foreground hover:bg-foreground/10 px-3 py-2 gap-[0.66ch] rounded-full max-md:hidden" onclick="window.openModal()">
+span class="flex-1 truncate only:text-center has-[div]:contents">Demo
+/span>
+/a>
+a class="group/button inline-flex items-center justify-center font-medium text-[0.8125rem] text-start leading-tight whitespace-nowrap hover:z-10 disabled:opacity-60 disabled:pointer-events-none relative text-background animate-rainbow hover:opacity-85 bg-[linear-gradient(var(--color-foreground),var(--color-foreground)),linear-gradient(var(--color-background)_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))] bg-[length:200%] [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.125rem)_solid_transparent] before:absolute before:bottom-[-20%] before:left-1/2 before:z-0 before:h-1/5 before:w-3/5 before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))] before:[filter:blur(0.75rem)] px-3 py-2 gap-[0.66ch] rounded-full" href="#" onclick="window.openModal()">
+span class="flex-1 truncate only:text-center has-[div]:contents">Get Lifetime Access
+/span>
+/a>
+/div>
+button class="group/button inline-flex items-center justify-center font-medium text-[0.8125rem] text-start leading-tight whitespace-nowrap rounded-md hover:z-10 disabled:opacity-60 disabled:pointer-events-none text-foreground hover:bg-foreground/10 px-3 py-2 gap-[0.66ch] -mx-3 lg:hidden" aria-label="Toggle menu">
+svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu shrink-0 first:-ml-[0.21425em] last:-mr-[0.21425em] size-[1.1em] opacity-75 size-5!" aria-hidden="true">
+path d="M4 5h16">
+/path>
+path d="M4 12h16">
+/path>
+path d="M4 19h16">
+/path>
+/svg>
+/button>
+/nav>
+div class="absolute inset-x-0 top-nav -z-10 h-dvh bg-background transition-all duration-200 ease-in-out lg:hidden -translate-y-full opacity-0">
+nav class="container flex flex-col gap-4 p-6">
+div class="flex gap-x-4 gap-y-3 flex-col items-start flex-wrap">
+a class="font-medium text-foreground hover:text-secondary-foreground" href="#" onclick="window.openModal()">Pricing
+/a>
+a class="font-medium text-foreground hover:text-secondary-foreground" href="#" onclick="window.openModal()">Showcase
+/a>
+a class="font-medium text-foreground hover:text-secondary-foreground" href="#" onclick="window.openModal()">Testimonials
+/a>
+a class="font-medium text-foreground hover:text-secondary-foreground" href="#" onclick="window.openModal()">Affiliates
+/a>
+a class="font-medium text-foreground hover:text-secondary-foreground" href="#" onclick="window.openModal()">Changelog
+/a>
+a class="font-medium text-foreground hover:text-secondary-foreground" href="#" onclick="window.openModal()">Docs
+/a>
+a target="_blank" class="font-medium text-foreground hover:text-secondary-foreground md:hidden" href="#" onclick="window.openModal()">Demo
+/a>
+/div>
+/nav>
+/div>
+/header>
+
+### HERO_SECTION
+section class="w-full scroll-mt-8 py-fluid-lg">
+div class="container flex flex-col gap-fluid-sm">
+div class="flex w-full flex-col gap-y-4 items-center text-center">
+a class="font-mono font-medium tracking-wider text-foreground/50 uppercase [&amp;[href]]:hover:text-foreground/75 text-[12px] -mb-2" href="#" onclick="window.openModal()">The tech behind OpenAlternative + many more...
+/a>
+h1 class="font-display font-medium text-pretty text-4xl tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl max-w-[13em]">Build, monetize, and scale directories with Next.js
+/h1>
+p class="text-pretty text-secondary-foreground [word-break:break-word] md:text-lg [&amp;_a]:font-semibold [&amp;_a]:text-foreground [&amp;_a]:hover:text-foreground/85 max-w-[40em]">A complete, customizable Next.js directory template with built-in payments, SEO, and AI content – pay once, launch unlimited directories.
+/p>
+div class="flex gap-x-3 gap-y-2 flex-row items-center place-content-start flex-wrap justify-center mt-6">
+a class="group/button inline-flex items-center justify-center font-medium text-start whitespace-nowrap hover:z-10 disabled:opacity-60 disabled:pointer-events-none relative text-background animate-rainbow hover:opacity-85 bg-[linear-gradient(var(--color-foreground),var(--color-foreground)),linear-gradient(var(--color-background)_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))] bg-[length:200%] [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.125rem)_solid_transparent] before:absolute before:bottom-[-20%] before:left-1/2 before:z-0 before:h-1/5 before:w-3/5 before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))] before:[filter:blur(0.75rem)] py-3 gap-[1ch] rounded-lg text-sm sm:text-base px-6 lg:px-8 lg:py-4 md:min-w-64" href="#" onclick="window.openModal()">
+svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 251" role="img" aria-label="Logo" class="shrink-0 first:-ml-[0.21425em] last:-mr-[0.21425em] size-[1.1em] opacity-75 h-5 w-auto fill-current">
+path d="M0 105v93c0 3.18.29 6.35 2.53 8.6l42.25 42.24C48.56 252.62 55 250.34 55 245v-93c0-3.19-1.05-6.36-3.31-8.62l-42.6-42.6C5.28 96.97-.02 99.64 0 105Zm74-49v132c0 3.18.79 6.14 3.03 8.38l42.25 42.24c3.77 3.78 10.72.73 10.72-4.62V103c0-3.18-1.55-6.5-3.8-8.76L83.56 51.62C79.8 47.84 74 50.66 74 56Zm74-50v155c0 3.18.84 6.6 3.08 8.85l54.99 54.98c3.78 3.78 9.93 1.02 9.93-4.33v-155c0-3.18-.76-6.1-3.01-8.36L157.62 1.77C153.84-2 148 .66 148 6Z">
+/path>
+/svg>
+span class="flex-1 truncate only:text-center has-[div]:contents">Get Lifetime Access
+/span>
+/a>
+/div>
+!--$?-->
+template id="B:1">
+/template>
+div class="flex gap-x-2 gap-y-1 flex-row items-center place-content-start flex-wrap text-sm text-secondary-foreground text-center">
+div class="flex gap-x-1 gap-y-0.5 flex-row items-center place-content-start flex-wrap font-medium text-green-500/80 animate-pulse">
+svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift" aria-hidden="true">
+rect x="3" y="8" width="18" height="4" rx="1">
+/rect>
+path d="M12 8v13">
+/path>
+path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7">
+/path>
+path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5">
+/path>
+/svg>
+/div>
+span class="block animate-pulse rounded-md bg-foreground/15 w-32"> 
+/span>
+/div>
+!--/$-->
+/div>
+div class="relative isolate mt-4 -mb-fluid-lg px-2">
+div class="flex flex-wrap items-center justify-center text-center gap-y-1 mt-2 -space-x-1.5 absolute z-20 bottom-6 left-1/2 -translate-x-1/2">
+img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" class="size-7 border-[2px] border-background rounded-full" style="color:transparent" srcSet="cdn-cgi/image/width=32, quality=90/customers/1.webp 1x, cdn-cgi/image/width=48, quality=90/customers/1.webp 2x" src="cdn-cgi/image/width=48,quality=90/customers/1.webp" />
+img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" class="size-7 border-[2px] border-background rounded-full" style="color:transparent" srcSet="cdn-cgi/image/width=32, quality=90/customers/2.webp 1x, cdn-cgi/image/width=48, quality=90/customers/2.webp 2x" src="cdn-cgi/image/width=48,quality=90/customers/2.webp" />
+img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" class="size-7 border-[2px] border-background rounded-full" style="color:transparent" srcSet="cdn-cgi/image/width=32, quality=90/customers/3.webp 1x, cdn-cgi/image/width=48, quality=90/customers/3.webp 2x" src="cdn-cgi/image/width=48,quality=90/customers/3.webp" />
+img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" class="size-7 border-[2px] border-background rounded-full" style="color:transparent" srcSet="cdn-cgi/image/width=32, quality=90/customers/4.webp 1x, cdn-cgi/image/width=48, quality=90/customers/4.webp 2x" src="cdn-cgi/image/width=48,quality=90/customers/4.webp" />
+img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" class="size-7 border-[2px] border-background rounded-full" style="color:transparent" srcSet="cdn-cgi/image/width=32, quality=90/customers/5.webp 1x, cdn-cgi/image/width=48, quality=90/customers/5.webp 2x" src="cdn-cgi/image/width=48,quality=90/customers/5.webp" />
+div class="flex gap-x-2 gap-y-1 flex-col items-start flex-wrap ml-3">
+div class="flex items-center gap-1">
+svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star size-3 fill-current text-yellow-500" aria-hidden="true">
+path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+/path>
+/svg>
+svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star size-3 fill-current text-yellow-500" aria-hidden="true">
+path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+/path>
+/svg>
+svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star size-3 fill-current text-yellow-500" aria-hidden="true">
+path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+/path>
+/svg>
+svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star size-3 fill-current text-yellow-500" aria-hidden="true">
+path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+/path>
+/svg>
+svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star size-3 fill-current text-yellow-500" aria-hidden="true">
+path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+/path>
+/svg>
+/div>
+p class="text-xs/none text-muted-foreground">200+ happy customers
+/p>
+/div>
+/div>
+img alt="Dashboard" loading="lazy" width="2560" height="1440" decoding="async" data-nimg="1" class="w-full max-h-96 aspect-2-1 object-cover object-top rounded-t-xl ring-8 ring-foreground/10 select-none opacity-90 md:rounded-t-2xl" style="color:transparent" srcSet="cdn-cgi/image/width=1024, quality=90/dashboard-dark.webp 1x" src="cdn-cgi/image/width=1024,quality=90/dashboard-dark.webp" />
+div class="absolute inset-0 z-10 bg-linear-to-b from-transparent from-50% to-background/75">
+/div>
+/div>
+/div>
+/section>
+
+### FALLBACK_S0
+div hidden id="S:0">
+div class="relative z-50 bg-gradient">
+div class="container py-3">
+div class="flex items-center justify-start gap-x-2 text-sm">
+span class="font-medium">🎉 
+!-- -->Early Bird
+!-- --> Discount – 
+!-- -->20% off
+!-- -->!
+/span>
+span class="max-sm:hidden opacity-85">Use code 
+span class="inline-flex items-center rounded px-1.5 py-0.5 font-mono text-xs font-medium bg-foreground/20 [[href]]:hover:bg-foreground/15">EARLYBIRD
+/span>
+/span>
+/div>
+/div>
+/div>
+/div>
+script>$RC("B:0","S:0")
+
+### FALLBACK_S1
+div hidden id="S:1">
+div class="flex gap-x-2 gap-y-1 flex-row items-center place-content-start flex-wrap text-sm text-secondary-foreground text-center">
+div class="flex gap-x-1 gap-y-0.5 flex-row items-center place-content-start flex-wrap font-medium text-green-500/80 animate-pulse">
+svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift" aria-hidden="true">
+rect x="3" y="8" width="18" height="4" rx="1">
+/rect>
+path d="M12 8v13">
+/path>
+path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7">
+/path>
+path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5">
+/path>
+/svg>20% off
+/div>
+span class="text-muted-foreground/75 text-xs">/
+/span>first 200 customers
+!-- --> 
+span class="inline-flex items-center rounded px-1.5 py-0.5 font-mono text-xs font-medium bg-foreground/20 [[href]]:hover:bg-foreground/15">3
+!-- --> left
+/span>
+/div>
+/div>
+script>$RC("B:1","S:1")
+
+### FALLBACK_S2
+div hidden id="S:2">
+div class="flex gap-x-2 gap-y-1 flex-row items-center place-content-start flex-wrap text-sm text-secondary-foreground text-center px-2 py-1 bg-foreground/5 border rounded-lg mt-2">
+div class="flex gap-x-1 gap-y-0.5 flex-row items-center place-content-start flex-wrap font-medium text-green-500/80 animate-pulse">
+svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift" aria-hidden="true">
+rect x="3" y="8" width="18" height="4" rx="1">
+/rect>
+path d="M12 8v13">
+/path>
+path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7">
+/path>
+path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5">
+/path>
+/svg>20% off
+/div>
+span class="text-muted-foreground/75 text-xs">/
+/span>first 200 customers
+!-- --> 
+span class="inline-flex items-center rounded px-1.5 py-0.5 font-mono text-xs font-medium bg-foreground/20 [[href]]:hover:bg-foreground/15">3
+!-- --> left
+/span>
+/div>
+/div>
+script>$RC("B:2","S:2")
+
+### MOBILE_MENU_STATE_CLASSES
+button class="group/button inline-flex items-center justify-center font-medium text-[0.8125rem] text-start leading-tight whitespace-nowrap rounded-md hover:z-10 disabled:opacity-60 disabled:pointer-events-none text-foreground hover:bg-foreground/10 px-3 py-2 gap-[0.66ch] -mx-3 lg:hidden" aria-label="Toggle menu">
+div class="absolute inset-x-0 top-nav -z-10 h-dvh bg-background transition-all duration-200 ease-in-out lg:hidden -translate-y-full opacity-0">

@@ -1,12 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import type {
-  LandingAction,
-  LandingContent,
-  LandingFeatureIconName,
-  LandingPricingTier,
-} from '../../types/landing';
-import { FeatureIcon, MarketingIcons } from '../icons/marketing-icons';
+import type { LandingAction, LandingContent, LandingPricingTier } from '../../types/landing';
+import { MarketingIcons } from '../icons/marketing-icons';
 
 interface PricingSectionProps {
   pricing: LandingContent['pricing'];
@@ -23,49 +18,99 @@ function actionProps(action: LandingAction) {
   return {};
 }
 
-const BENEFIT_ICONS: LandingFeatureIconName[] = [
-  'code',
-  'credit-card',
-  'sparkles',
-  'globe',
-  'settings',
-  'chart-bar',
+type PricingBenefitIcon =
+  | 'package-open'
+  | 'lock'
+  | 'brain'
+  | 'bot'
+  | 'pen-tool'
+  | 'brush'
+  | 'life-buoy'
+  | 'headphones'
+  | 'wrench'
+  | 'code'
+  | 'globe'
+  | 'settings'
+  | 'sparkles';
+
+const TIER_ICON_MAP: PricingBenefitIcon[][] = [
+  ['package-open', 'lock', 'brain', 'bot', 'pen-tool'],
+  ['brush', 'life-buoy', 'headphones', 'wrench', 'code'],
+  ['globe', 'settings', 'sparkles', 'package-open', 'lock'],
 ];
 
-function benefitIcon(index: number) {
-  return BENEFIT_ICONS[index % BENEFIT_ICONS.length] ?? 'sparkles';
+const FALLBACK_ICON_SET: PricingBenefitIcon[] = ['sparkles'];
+
+function benefitIcon(tierIndex: number, benefitIndex: number): PricingBenefitIcon {
+  const set = TIER_ICON_MAP[tierIndex] ?? TIER_ICON_MAP[0] ?? FALLBACK_ICON_SET;
+  return set[benefitIndex % set.length] ?? 'sparkles';
 }
 
-function PricingCard({ tier }: { tier: LandingPricingTier }) {
+function PricingBenefitIconNode({ name }: { name: PricingBenefitIcon }) {
+  switch (name) {
+    case 'package-open':
+      return <MarketingIcons.packageOpen className="lucide lucide-package-open" aria-hidden />;
+    case 'lock':
+      return <MarketingIcons.lock className="lucide lucide-lock" aria-hidden />;
+    case 'brain':
+      return <MarketingIcons.brain className="lucide lucide-brain" aria-hidden />;
+    case 'bot':
+      return <MarketingIcons.bot className="lucide lucide-bot" aria-hidden />;
+    case 'pen-tool':
+      return <MarketingIcons.penTool className="lucide lucide-pen-tool" aria-hidden />;
+    case 'brush':
+      return <MarketingIcons.brush className="lucide lucide-brush" aria-hidden />;
+    case 'life-buoy':
+      return <MarketingIcons.lifeBuoy className="lucide lucide-life-buoy" aria-hidden />;
+    case 'headphones':
+      return <MarketingIcons.headphones className="lucide lucide-headphones" aria-hidden />;
+    case 'wrench':
+      return <MarketingIcons.wrench className="lucide lucide-wrench" aria-hidden />;
+    case 'code':
+      return <MarketingIcons.code className="lucide lucide-code" aria-hidden />;
+    case 'globe':
+      return <MarketingIcons.globe className="lucide lucide-globe" aria-hidden />;
+    case 'settings':
+      return <MarketingIcons.settings className="lucide lucide-settings" aria-hidden />;
+    case 'sparkles':
+      return <MarketingIcons.sparkles className="lucide lucide-sparkles" aria-hidden />;
+    default:
+      return <MarketingIcons.sparkles className="lucide lucide-sparkles" aria-hidden />;
+  }
+}
+
+function PricingCard({
+  tier,
+  tierIndex,
+}: {
+  tier: LandingPricingTier;
+  tierIndex: number;
+}) {
   return (
     <div
       className={[
-        'flex flex-col gap-6 min-w-[95%] sm:min-w-92 flex-1 snap-center p-6 overflow-clip first:rounded-s-xl last:rounded-e-xl md:p-8 lg:min-w-0 lg:shrink',
-        tier.highlighted
-          ? 'relative z-10 bg-primary/15 ring ring-inset ring-primary/50 -mx-px lg:basis-[55%]'
-          : 'ring ring-inset ring-border lg:basis-[45%]',
+        'flex flex-col gap-6 min-w-[95%] sm:min-w-92 flex-1 snap-center p-6 overflow-clip first:rounded-s-xl last:rounded-e-xl md:p-8 lg:min-w-0 lg:shrink ring ring-inset ring-border not-first:border-l',
+        tier.highlighted ? 'lg:basis-[55%]' : 'lg:basis-[45%]',
       ].join(' ')}
     >
-      <div className="flex flex-col flex-wrap items-start gap-6">
-        <div className="flex w-full flex-col flex-wrap items-start gap-x-1 gap-y-0.5">
-          <div className="flex flex-row flex-wrap items-center gap-x-3 gap-y-2 place-content-start">
-            <h4 className="font-display text-pretty text-xl font-medium tracking-tight">{tier.name}</h4>
+      <div className="flex flex-col items-start flex-wrap gap-6">
+        <div className="flex gap-x-1 gap-y-0.5 flex-col items-start flex-wrap">
+          <div className="flex gap-x-3 gap-y-2 flex-row items-center place-content-start flex-wrap">
+            <h4 className="font-display font-medium text-pretty text-xl tracking-tight">{tier.name}</h4>
             {tier.badge ? (
-              <div className="rounded-full bg-primary px-2.5 py-0.5 font-mono text-[11px] font-medium tracking-wider text-primary-foreground uppercase">
+              <div className="inline-flex items-center rounded px-1.5 py-0.5 font-mono text-xs font-medium bg-foreground/20 [[href]]:hover:bg-foreground/15">
                 {tier.badge}
               </div>
             ) : null}
           </div>
-          <p className="text-balance text-foreground/50">{tier.description}</p>
+          <p className="text-foreground/50 text-balance">{tier.description}</p>
         </div>
 
-        <div className="relative flex h-14 items-baseline gap-0.5 text-muted-foreground">
-          {tier.note ? <span className="absolute -top-3.5 left-0 text-xs">{tier.note}</span> : null}
+        <div className="relative flex items-baseline gap-0.5 h-14 text-muted-foreground">
+          {tier.note ? <span className="text-xs text-muted-foreground absolute -top-4 left-0">{tier.note}</span> : null}
           <span className="text-2xl">$</span>
           <span className="relative">
-            <span className="text-6xl font-medium tracking-tighter text-foreground">
-              {tier.priceLabel}
-            </span>
+            <span className="text-6xl font-medium tracking-tighter text-foreground">{tier.priceLabel}</span>
             {tier.strikeLabel ? (
               <span className="absolute -top-[0.25em] left-full ml-2 text-lg font-normal before:absolute before:-inset-x-0.5 before:top-1/2 before:h-[0.075em] before:-rotate-10 before:bg-red-500/75">
                 {tier.strikeLabel}
@@ -77,14 +122,10 @@ function PricingCard({ tier }: { tier: LandingPricingTier }) {
 
       <hr className="-mx-8" />
 
-      <div className="flex flex-1 flex-col flex-wrap items-start gap-x-4 gap-y-3">
+      <div className="flex gap-x-4 gap-y-3 flex-col items-start flex-wrap flex-1">
         {tier.benefits.map((benefit, index) => (
-          <div key={benefit} className="flex flex-row items-start gap-x-3 gap-y-2 place-content-start">
-            <FeatureIcon
-              name={benefitIcon(index)}
-              className="lucide size-4"
-              aria-hidden
-            />
+          <div key={benefit} className="flex gap-x-3 gap-y-2 flex-row place-content-start items-start">
+            <PricingBenefitIconNode name={benefitIcon(tierIndex, index)} />
             <span className="-mt-0.5 flex-1 text-sm text-secondary-foreground">{benefit}</span>
           </div>
         ))}
@@ -92,15 +133,14 @@ function PricingCard({ tier }: { tier: LandingPricingTier }) {
 
       <Link
         href={tier.cta.href}
-        className={[
-          'group/button inline-flex items-center justify-center gap-[1ch] rounded-lg px-5 py-3 text-sm font-medium text-start whitespace-nowrap hover:z-10 sm:text-base mt-2 disabled:pointer-events-none disabled:opacity-60',
-          tier.highlighted
-            ? 'bg-primary text-primary-foreground hover:opacity-85'
-            : 'bg-foreground text-background hover:opacity-85',
-        ].join(' ')}
+        className="group/button inline-flex items-center justify-center font-medium text-start whitespace-nowrap hover:z-10 disabled:opacity-60 disabled:pointer-events-none text-background bg-foreground hover:opacity-85 px-5 py-3 gap-[1ch] rounded-lg text-sm sm:text-base"
         {...actionProps(tier.cta)}
       >
         <span className="flex-1 truncate only:text-center has-[div]:contents">{tier.cta.label}</span>
+        <MarketingIcons.arrowRight
+          className="shrink-0 first:-ml-[0.21425em] last:-mr-[0.21425em] size-[1.1em] opacity-75 lucide lucide-arrow-right"
+          aria-hidden
+        />
       </Link>
     </div>
   );
@@ -111,45 +151,41 @@ export function PricingSection({ pricing }: PricingSectionProps) {
     <section className="w-full scroll-mt-8 py-fluid-lg" id="pricing">
       <div className="container flex flex-col gap-fluid-sm">
         <div className="flex w-full flex-col items-center gap-y-4 text-center">
-          <div className="-mb-2 font-mono text-[12px] font-medium text-foreground/50 uppercase tracking-wider">
+          <div className="font-mono font-medium tracking-wider text-foreground/50 uppercase [&[href]]:hover:text-foreground/75 text-[12px] -mb-2">
             {pricing.overline}
           </div>
-          <h2 className="font-display text-pretty text-3xl font-medium tracking-tighter md:text-4xl">
+          <h2 className="font-display font-medium text-pretty text-3xl tracking-tighter md:text-4xl">
             {pricing.heading}
           </h2>
-          <p className="max-w-2xl text-pretty text-secondary-foreground [word-break:break-word] md:text-lg">
+          <p className="text-pretty text-secondary-foreground [word-break:break-word] md:text-lg [&_a]:font-semibold [&_a]:text-foreground [&_a]:hover:text-foreground/85 max-w-2xl">
             {pricing.description}
           </p>
 
-          <div className="mt-2 flex w-full justify-center">
-            <div className="inline-flex flex-row flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-lg border bg-foreground/5 px-2 py-1 text-center text-sm text-secondary-foreground">
-              <div className="inline-flex flex-row flex-wrap items-center justify-center gap-x-1 gap-y-0.5 font-medium text-green-500/80 animate-pulse whitespace-nowrap">
-                <MarketingIcons.gift className="size-4" aria-hidden />
-                <span>{pricing.offerBadge}</span>
-              </div>
-              <span className="text-secondary-foreground/60" aria-hidden>
-                {pricing.offerDivider}
-              </span>
-              <span className="whitespace-nowrap">{pricing.offerCounterLabel}</span>
-              <span className="inline-flex items-center rounded bg-foreground/20 px-1.5 py-0.5 font-mono text-xs font-medium whitespace-nowrap">
-                {pricing.offerCounterValue}
-              </span>
+          <div className="flex gap-x-2 gap-y-1 flex-row items-center place-content-start flex-wrap text-sm text-secondary-foreground text-center px-2 py-1 bg-foreground/5 border rounded-lg mt-2">
+            <div className="flex gap-x-1 gap-y-0.5 flex-row items-center place-content-start flex-wrap font-medium text-green-500/80 animate-pulse">
+              <MarketingIcons.gift className="lucide lucide-gift" aria-hidden />
+              {pricing.offerBadge}
             </div>
+            <span className="text-muted-foreground/75 text-xs">{pricing.offerDivider}</span>
+            {pricing.offerCounterLabel}{' '}
+            <span className="inline-flex items-center rounded px-1.5 py-0.5 font-mono text-xs font-medium bg-foreground/20 [[href]]:hover:bg-foreground/15">
+              {pricing.offerCounterValue}
+            </span>
           </div>
         </div>
 
-        <div className="flex flex-col flex-wrap items-center gap-x-4 gap-y-3">
-          <div className="relative left-1/2 flex w-dvw -translate-x-1/2 snap-x snap-mandatory flex-row items-stretch overflow-x-auto px-6 lg:static lg:w-full lg:translate-x-0 lg:overflow-clip lg:px-0 lg:snap-none">
-            {pricing.tiers.map((tier) => (
-              <PricingCard key={tier.name} tier={tier} />
+        <div className="flex gap-x-4 gap-y-3 flex-col flex-wrap items-center">
+          <div className="flex flex-row items-stretch relative left-1/2 -translate-x-1/2 w-dvw overflow-x-auto snap-x snap-mandatory px-6 lg:static lg:translate-x-0 lg:w-full lg:overflow-clip lg:snap-none lg:px-0">
+            {pricing.tiers.map((tier, tierIndex) => (
+              <PricingCard key={tier.name} tier={tier} tierIndex={tierIndex} />
             ))}
           </div>
 
-          <div className="text-center font-mono text-[11px] font-medium text-foreground/50 uppercase tracking-wider">
+          <div className="font-mono font-medium tracking-wider text-foreground/50 uppercase [&[href]]:hover:text-foreground/75 text-[11px] text-center">
             {pricing.legalNote}
           </div>
 
-          <div className="mt-2 flex flex-wrap items-center justify-center gap-y-1 -space-x-1.5 text-center">
+          <div className="flex flex-wrap items-center justify-center text-center gap-y-1 mt-2 -space-x-1.5">
             {pricing.customerAvatars.map((avatarSrc, index) => (
               <Image
                 key={avatarSrc}
@@ -163,7 +199,7 @@ export function PricingSection({ pricing }: PricingSectionProps) {
               />
             ))}
 
-            <div className="ml-3 flex flex-col flex-wrap items-start gap-x-2 gap-y-1">
+            <div className="flex gap-x-2 gap-y-1 flex-col items-start flex-wrap ml-3">
               <div className="flex items-center gap-1">
                 {Array.from({ length: 5 }).map((_, index) => (
                   <MarketingIcons.star

@@ -25,18 +25,18 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
     <section className="light w-full scroll-mt-8 bg-white py-fluid-lg text-foreground" id="testimonials">
       <div className="container flex flex-col gap-fluid-sm">
         <div className="flex w-full flex-col items-center gap-y-4 text-center">
-          <div className="-mb-2 font-mono text-[12px] font-medium text-foreground/50 uppercase tracking-wider">
+          <div className="font-mono font-medium tracking-wider text-foreground/50 uppercase [&[href]]:hover:text-foreground/75 text-[12px] -mb-2">
             {testimonials.overline}
           </div>
           <h2 className="font-display text-pretty text-3xl font-medium tracking-tighter md:text-4xl">
             {testimonials.heading}
           </h2>
-          <p className="max-w-2xl text-pretty text-secondary-foreground [word-break:break-word] md:text-lg">
+          <p className="max-w-2xl text-pretty text-secondary-foreground [word-break:break-word] md:text-lg [&_a]:font-semibold [&_a]:text-foreground [&_a]:hover:text-foreground/85">
             {testimonials.description}
           </p>
           <Link
             href={testimonials.viewAllAction.href}
-            className="mt-2 inline-flex items-center rounded border px-1.5 py-0.5 font-mono text-xs font-medium hover:bg-foreground/5"
+            className="inline-flex items-center rounded px-1.5 py-0.5 font-mono text-xs font-medium border [[href]]:hover:bg-foreground/5 mt-2"
             {...actionProps(testimonials.viewAllAction)}
           >
             {testimonials.viewAllAction.label}
@@ -74,7 +74,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
 function TestimonialCard({ item }: { item: LandingTestimonialItem }) {
   return (
     <article className="dark:bg-foreground/10 flex w-80 shrink-0 flex-col gap-4 rounded-xl bg-foreground/5 p-6">
-      <div className="mb-[-0.5rem] flex items-center gap-1">
+      <div className="flex items-center gap-1 -mb-2">
         {Array.from({ length: 5 }).map((_, index) => (
           <MarketingIcons.star
             key={index}

@@ -12,7 +12,7 @@ export function PromoBar({ promoBar }: PromoBarProps) {
           <span className="font-medium">🎉 {promoBar.heading}</span>
           <span className="max-sm:hidden opacity-85">
             {promoBar.codePrefix}{' '}
-            <span className="inline-flex items-center rounded bg-foreground/20 px-1.5 py-0.5 font-mono text-xs font-medium hover:bg-foreground/15">
+            <span className="inline-flex items-center rounded px-1.5 py-0.5 font-mono text-xs font-medium bg-foreground/20 [[href]]:hover:bg-foreground/15">
               {promoBar.code}
             </span>
           </span>

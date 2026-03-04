@@ -23,13 +23,18 @@ export function HeroSection({ hero }: HeroSectionProps) {
     <section className="w-full scroll-mt-8 py-fluid-lg">
       <div className="container flex flex-col gap-fluid-sm">
         <div className="flex w-full flex-col gap-y-4 items-center text-center">
-          <p className="font-mono font-medium tracking-wider text-foreground/50 uppercase text-[12px] -mb-2">
+          <Link
+            className="font-mono font-medium tracking-wider text-foreground/50 uppercase [&[href]]:hover:text-foreground/75 text-[12px] -mb-2"
+            href="#"
+          >
             {hero.overline}
-          </p>
+          </Link>
+
           <h1 className="font-display font-medium text-pretty text-4xl tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl max-w-[13em]">
             {hero.heading}
           </h1>
-          <p className="text-pretty text-secondary-foreground [word-break:break-word] md:text-lg max-w-[40em]">
+
+          <p className="text-pretty text-secondary-foreground [word-break:break-word] md:text-lg [&_a]:font-semibold [&_a]:text-foreground [&_a]:hover:text-foreground/85 max-w-[40em]">
             {hero.subheading}
           </p>
 
@@ -44,21 +49,19 @@ export function HeroSection({ hero }: HeroSectionProps) {
             </Link>
           </div>
 
-          <div className="flex flex-col items-center text-center">
-            <div className="flex gap-x-2 gap-y-1 flex-row items-center place-content-start flex-wrap text-sm text-secondary-foreground text-center">
-              <div className="flex gap-x-1 gap-y-0.5 flex-row items-center place-content-start flex-wrap font-medium text-green-500/80 animate-pulse">
-                <MarketingIcons.gift className="lucide lucide-gift" aria-hidden />
-                {hero.promo.discountLabel}
-              </div>
-              <span className="text-muted-foreground/75 text-xs">{hero.promo.divider}</span>
-              {hero.promo.audienceLabel}{' '}
-              <span className="inline-flex items-center rounded px-1.5 py-0.5 font-mono text-xs font-medium bg-foreground/20 [[href]]:hover:bg-foreground/15">
-                {hero.promo.counterValue} {hero.promo.counterSuffix}
-              </span>
+          <div className="flex gap-x-2 gap-y-1 flex-row items-center place-content-start flex-wrap text-sm text-secondary-foreground text-center">
+            <div className="flex gap-x-1 gap-y-0.5 flex-row items-center place-content-start flex-wrap font-medium text-green-500/80 animate-pulse">
+              <MarketingIcons.gift className="lucide lucide-gift" aria-hidden />
+              {hero.promo.discountLabel}
             </div>
-
-            <p className="mt-1 text-[11px] text-muted-foreground/80">{hero.promo.guaranteeLabel}</p>
+            <span className="text-muted-foreground/75 text-xs">{hero.promo.divider}</span>
+            {hero.promo.audienceLabel}{' '}
+            <span className="inline-flex items-center rounded px-1.5 py-0.5 font-mono text-xs font-medium bg-foreground/20 [[href]]:hover:bg-foreground/15">
+              {hero.promo.counterValue} {hero.promo.counterSuffix}
+            </span>
           </div>
+
+          <p className="text-xs text-muted-foreground">{hero.promo.guaranteeLabel}</p>
         </div>
 
         <div className="relative isolate mt-4 -mb-fluid-lg px-2">

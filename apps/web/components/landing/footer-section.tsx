@@ -49,7 +49,10 @@ export function FooterSection({ brandName, footer }: FooterSectionProps) {
                 >
                   <SocialIcon
                     name={item.icon}
-                    className="brand size-[1.1em] shrink-0 opacity-75 first:-ml-[0.21425em] last:-mr-[0.21425em]"
+                    className={[
+                      'size-[1.1em] shrink-0 opacity-75 first:-ml-[0.21425em] last:-mr-[0.21425em]',
+                      item.icon === 'mail' ? 'lucide lucide-mail' : 'brand',
+                    ].join(' ')}
                     aria-hidden
                   />
                 </Link>
@@ -58,7 +61,9 @@ export function FooterSection({ brandName, footer }: FooterSectionProps) {
           </div>
 
           <div className="flex flex-col flex-wrap items-start gap-x-4 gap-y-3">
-            <div className="font-mono text-[11px] font-medium text-foreground/50 uppercase tracking-wider">Product</div>
+            <div className="font-mono font-medium tracking-wider text-foreground/50 uppercase [&[href]]:hover:text-foreground/75 text-[11px]">
+              Product
+            </div>
             <div className="flex flex-col flex-wrap items-start gap-x-3 gap-y-1.5">
               {footer.productLinks.map((item) => (
                 <Link
@@ -73,7 +78,9 @@ export function FooterSection({ brandName, footer }: FooterSectionProps) {
           </div>
 
           <div className="flex flex-col flex-wrap items-start gap-x-4 gap-y-3">
-            <div className="font-mono text-[11px] font-medium text-foreground/50 uppercase tracking-wider">Resources</div>
+            <div className="font-mono font-medium tracking-wider text-foreground/50 uppercase [&[href]]:hover:text-foreground/75 text-[11px]">
+              Resources
+            </div>
             <div className="flex flex-col flex-wrap items-start gap-x-3 gap-y-1.5">
               {footer.resourceLinks.map((item) => (
                 <Link

@@ -1,0 +1,7 @@
+index.html bytes: 449896
+class attributes: 1095
+unique class tokens: 397
+arbitrary class tokens: 43
+section count: 8
+heading-ish nodes tracked: 77
+icon tokens tracked: 26

@@ -20,7 +20,7 @@ function FeatureBlock({ item }: { item: LandingFeatureItem }) {
     <div className="flex min-h-48 flex-col flex-wrap items-start gap-x-3 gap-y-2 border-l p-6 text-start sm:justify-end">
       <FeatureIcon
         name={item.icon}
-        className="mb-1 size-12 rounded-xl border p-3 text-muted-foreground"
+        className={`lucide lucide-${item.icon} p-3 mb-1 border rounded-xl text-muted-foreground size-12`}
         aria-hidden
       />
       <h4 className="font-display relative text-pretty text-xl font-medium tracking-tight">
@@ -42,7 +42,7 @@ export function FeaturesSection({ features }: FeaturesSectionProps) {
           <h2 className="font-display text-pretty text-3xl font-medium tracking-tighter md:text-4xl">
             {features.heading}
           </h2>
-          <p className="max-w-[42.5em] text-pretty text-secondary-foreground [word-break:break-word] md:text-lg">
+          <p className="max-w-[42.5em] text-pretty text-secondary-foreground [word-break:break-word] md:text-lg [&_a]:font-semibold [&_a]:text-foreground [&_a]:hover:text-foreground/85">
             {features.description}
           </p>
         </div>

@@ -1,0 +1,8 @@
+467:section class="w-full scroll-mt-8 py-fluid-lg">
+547:section class="w-full scroll-mt-8 light bg-white text-foreground py-fluid-lg">
+566:section class="w-full scroll-mt-8 light bg-background text-foreground py-fluid-lg" id="features">
+920:section class="w-full scroll-mt-8 py-fluid-lg" id="pricing">
+1166:section class="w-full scroll-mt-8 py-fluid-sm -mt-4 mb-8" id="quote">
+1183:section class="w-full scroll-mt-8 py-fluid-lg pt-fluid-sm" id="faq">
+1397:section class="w-full scroll-mt-8 light bg-white text-foreground py-fluid-lg" id="testimonials">
+2929:section class="w-full scroll-mt-8 bg-gradient overflow-clip py-fluid-sm group relative grid place-items-center min-h-96">

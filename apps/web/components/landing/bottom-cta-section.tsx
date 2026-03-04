@@ -22,13 +22,13 @@ export function BottomCtaSection({ bottomCta }: BottomCtaSectionProps) {
     <section className="group relative grid min-h-96 w-full scroll-mt-8 place-items-center overflow-clip bg-gradient py-fluid-sm">
       <div className="container flex flex-col gap-fluid-sm">
         <div className="flex w-full flex-col items-center gap-y-4 text-center">
-          <div className="-mb-2 font-mono text-[11px] font-medium text-foreground/50 uppercase tracking-wider">
+          <div className="font-mono font-medium tracking-wider text-foreground/50 uppercase [&[href]]:hover:text-foreground/75 text-[11px] -mb-2">
             {bottomCta.overline}
           </div>
           <h2 className="font-display text-pretty text-3xl font-medium tracking-tighter md:text-4xl">
             {bottomCta.heading}
           </h2>
-          <p className="max-w-[42.5em] text-pretty text-secondary-foreground [word-break:break-word] md:text-lg">
+          <p className="max-w-[42.5em] text-pretty text-secondary-foreground [word-break:break-word] md:text-lg [&_a]:font-semibold [&_a]:text-foreground [&_a]:hover:text-foreground/85">
             {bottomCta.description}
           </p>
 
@@ -41,7 +41,7 @@ export function BottomCtaSection({ bottomCta }: BottomCtaSectionProps) {
               {bottomCta.action.label}
             </span>
             <MarketingIcons.arrowUpRight
-              className="size-[1.1em] shrink-0 opacity-75 first:-ml-[0.21425em] last:-mr-[0.21425em]"
+              className="shrink-0 first:-ml-[0.21425em] last:-mr-[0.21425em] size-[1.1em] opacity-75 lucide lucide-arrow-up-right"
               aria-hidden
             />
           </Link>

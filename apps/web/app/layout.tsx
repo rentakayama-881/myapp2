@@ -16,8 +16,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className="scroll-smooth">
-      <body>{children}</body>
+    <html
+      lang="id"
+      className="scroll-smooth inter_974009b0-module__ZYDm7W__variable geist_mono_a8b74147-module__ep2POW__variable"
+    >
+      <body className="font-sans">{children}</body>
     </html>
   );
 }

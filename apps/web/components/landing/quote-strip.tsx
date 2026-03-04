@@ -38,17 +38,16 @@ export function QuoteStrip({ quoteStrip }: QuoteStripProps) {
 
             <div className="text-start text-sm">
               <div className="font-medium">{quoteStrip.authorName}</div>
-
-            <Link
-              className="text-muted-foreground hover:text-foreground"
-              href={quoteStrip.sourceHref}
-              {...actionProps({
-                label: quoteStrip.sourceLabel,
-                href: quoteStrip.sourceHref,
-              })}
-            >
-              {quoteStrip.sourceLabel}
-            </Link>
+              <Link
+                className="text-muted-foreground hover:text-foreground"
+                href={quoteStrip.sourceHref}
+                {...actionProps({
+                  label: quoteStrip.sourceLabel,
+                  href: quoteStrip.sourceHref,
+                })}
+              >
+                {quoteStrip.sourceLabel}
+              </Link>
             </div>
           </div>
         </div>

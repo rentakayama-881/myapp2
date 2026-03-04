@@ -38,6 +38,12 @@ export const MarketingIcons = {
       <path d="M7 17 17 7" />
     </svg>
   ),
+  arrowRight: (props: IconProps) => (
+    <svg viewBox="0 0 24 24" {...svgProps(props)}>
+      <path d="M5 12h14" />
+      <path d="m12 5 7 7-7 7" />
+    </svg>
+  ),
   plus: (props: IconProps) => (
     <svg viewBox="0 0 24 24" {...svgProps(props)}>
       <path d="M12 5v14" />
@@ -57,6 +63,85 @@ export const MarketingIcons = {
       <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
     </svg>
   ),
+  packageOpen: (props: IconProps) => (
+    <svg viewBox="0 0 24 24" {...svgProps(props)}>
+      <path d="M12 22v-9" />
+      <path d="M15.17 2.21a1.67 1.67 0 0 1 1.63 0L21 4.57a1.93 1.93 0 0 1 0 3.36L8.82 14.79a1.655 1.655 0 0 1-1.64 0L3 12.43a1.93 1.93 0 0 1 0-3.36z" />
+      <path d="M20 13v3.87a2.06 2.06 0 0 1-1.11 1.83l-6 3.08a1.93 1.93 0 0 1-1.78 0l-6-3.08A2.06 2.06 0 0 1 4 16.87V13" />
+      <path d="M21 12.43a1.93 1.93 0 0 0 0-3.36L8.83 2.2a1.64 1.64 0 0 0-1.63 0L3 4.57a1.93 1.93 0 0 0 0 3.36l12.18 6.86a1.636 1.636 0 0 0 1.63 0z" />
+    </svg>
+  ),
+  lock: (props: IconProps) => (
+    <svg viewBox="0 0 24 24" {...svgProps(props)}>
+      <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+    </svg>
+  ),
+  brain: (props: IconProps) => (
+    <svg viewBox="0 0 24 24" {...svgProps(props)}>
+      <path d="M12 18V5" />
+      <path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4" />
+      <path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5" />
+      <path d="M17.997 5.125a4 4 0 0 1 2.526 5.77" />
+      <path d="M18 18a4 4 0 0 0 2-7.464" />
+      <path d="M6 18a4 4 0 0 1-2-7.464" />
+      <path d="M6.003 5.125A4 4 0 0 0 3.477 10.9" />
+      <path d="M10.4 22a4.8 4.8 0 0 1 3.2 0" />
+      <path d="M10.4 18a4.8 4.8 0 0 0 3.2 0" />
+    </svg>
+  ),
+  bot: (props: IconProps) => (
+    <svg viewBox="0 0 24 24" {...svgProps(props)}>
+      <path d="M12 8V4H8" />
+      <rect width="16" height="12" x="4" y="8" rx="2" />
+      <path d="M2 14h2" />
+      <path d="M20 14h2" />
+      <path d="M15 13v2" />
+      <path d="M9 13v2" />
+    </svg>
+  ),
+  penTool: (props: IconProps) => (
+    <svg viewBox="0 0 24 24" {...svgProps(props)}>
+      <path d="m12 19 7-7 3 3-7 7-3-3z" />
+      <path d="m18 13-1.5-1.5" />
+      <path d="M2 22h7l-7-7v7z" />
+      <path d="m7 17 5-5" />
+      <path d="m12 12 2-2" />
+      <path d="m3 3 4 4" />
+    </svg>
+  ),
+  brush: (props: IconProps) => (
+    <svg viewBox="0 0 24 24" {...svgProps(props)}>
+      <path d="m9.06 11.9 8.04-8.04a2.828 2.828 0 1 1 4 4l-8.04 8.04" />
+      <path d="M7.07 14.93a6 6 0 0 0 8 8l.99-.99a4 4 0 0 0-5.66-5.66l-.99.99a2 2 0 0 1-2.83-2.83l.99-.99a4 4 0 0 0-5.66-5.66l-.99.99a6 6 0 0 0 8.48 8.48z" />
+    </svg>
+  ),
+  lifeBuoy: (props: IconProps) => (
+    <svg viewBox="0 0 24 24" {...svgProps(props)}>
+      <circle cx="12" cy="12" r="10" />
+      <circle cx="12" cy="12" r="4" />
+      <path d="m4.93 4.93 4.24 4.24" />
+      <path d="m14.83 14.83 4.24 4.24" />
+      <path d="m14.83 9.17 4.24-4.24" />
+      <path d="m9.17 14.83-4.24 4.24" />
+    </svg>
+  ),
+  headphones: (props: IconProps) => (
+    <svg viewBox="0 0 24 24" {...svgProps(props)}>
+      <path d="M3 14v-2a9 9 0 1 1 18 0v2" />
+      <path d="M21 18a3 3 0 0 1-3 3h-1v-8h1a3 3 0 0 1 3 3z" />
+      <path d="M3 18a3 3 0 0 0 3 3h1v-8H6a3 3 0 0 0-3 3z" />
+    </svg>
+  ),
+  wrench: (props: IconProps) => (
+    <svg viewBox="0 0 24 24" {...svgProps(props)}>
+      <path d="M14.7 6.3a4 4 0 0 0 5 5l-8.9 8.9a2 2 0 1 1-2.8-2.8l8.9-8.9a4 4 0 0 0 5-5l-3 3-4-1 1-4z" />
+    </svg>
+  ),
+  code: (props: IconProps) => featureIconByName('code', props),
+  globe: (props: IconProps) => featureIconByName('globe', props),
+  settings: (props: IconProps) => featureIconByName('settings', props),
+  sparkles: (props: IconProps) => featureIconByName('sparkles', props),
   socialGithub: (props: IconProps) => (
     <svg viewBox="0 0 24 24" strokeWidth={1.5} {...svgProps(props)}>
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />

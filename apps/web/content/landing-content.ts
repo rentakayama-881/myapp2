@@ -128,10 +128,10 @@ export const landingContent: LandingContent = {
     overline: 'Pricing',
     heading: 'Pay once, build faster',
     description: 'Struktur pricing sementara. Label, benefit, dan harga bisa kamu edit sendiri nanti.',
-    offerBadge: 'Promo temporary active',
+    offerBadge: '20% off',
     offerDivider: '/',
-    offerCounterLabel: 'tested by early users',
-    offerCounterValue: '3 slots left',
+    offerCounterLabel: 'first 200 customers',
+    offerCounterValue: '3 left',
     legalNote: 'Prices in USD. VAT may apply.',
     socialProofLabel: '200+ happy customers',
     customerAvatars: [
