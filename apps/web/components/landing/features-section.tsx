@@ -23,7 +23,7 @@ function FeatureBlock({ item }: { item: LandingFeatureItem }) {
         className="mb-1 size-12 rounded-xl border p-3 text-muted-foreground"
         aria-hidden
       />
-      <h4 className="relative text-pretty text-xl font-medium tracking-tight">
+      <h4 className="font-display relative text-pretty text-xl font-medium tracking-tight">
         <span className="absolute -left-6 -ml-0.5 h-7 w-0.75 rounded-full bg-foreground" />
         {item.title}
       </h4>
@@ -39,7 +39,7 @@ export function FeaturesSection({ features }: FeaturesSectionProps) {
     <section className="light w-full scroll-mt-8 bg-background py-fluid-lg text-foreground" id="features">
       <div className="container flex flex-col gap-fluid-sm">
         <div className="flex w-full flex-col items-center gap-y-4 text-center">
-          <h2 className="text-pretty text-3xl font-medium tracking-tighter md:text-4xl">
+          <h2 className="font-display text-pretty text-3xl font-medium tracking-tighter md:text-4xl">
             {features.heading}
           </h2>
           <p className="max-w-[42.5em] text-pretty text-secondary-foreground [word-break:break-word] md:text-lg">

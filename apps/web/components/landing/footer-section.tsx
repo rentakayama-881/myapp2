@@ -58,7 +58,7 @@ export function FooterSection({ brandName, footer }: FooterSectionProps) {
           </div>
 
           <div className="flex flex-col flex-wrap items-start gap-x-4 gap-y-3">
-            <div className="text-[11px] font-medium text-foreground/50 uppercase tracking-wider">Product</div>
+            <div className="font-mono text-[11px] font-medium text-foreground/50 uppercase tracking-wider">Product</div>
             <div className="flex flex-col flex-wrap items-start gap-x-3 gap-y-1.5">
               {footer.productLinks.map((item) => (
                 <Link
@@ -73,7 +73,7 @@ export function FooterSection({ brandName, footer }: FooterSectionProps) {
           </div>
 
           <div className="flex flex-col flex-wrap items-start gap-x-4 gap-y-3">
-            <div className="text-[11px] font-medium text-foreground/50 uppercase tracking-wider">Resources</div>
+            <div className="font-mono text-[11px] font-medium text-foreground/50 uppercase tracking-wider">Resources</div>
             <div className="flex flex-col flex-wrap items-start gap-x-3 gap-y-1.5">
               {footer.resourceLinks.map((item) => (
                 <Link

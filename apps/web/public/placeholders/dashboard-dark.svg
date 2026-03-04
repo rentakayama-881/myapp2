@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Dashboard preview placeholder</title>
+  <desc id="desc">Dark analytics dashboard with cards and chart placeholders.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#101420"/>
+      <stop offset="100%" stop-color="#0a0d15"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1b2234"/>
+      <stop offset="100%" stop-color="#151b2a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#7c7bff"/>
+      <stop offset="50%" stop-color="#57d2ff"/>
+      <stop offset="100%" stop-color="#7effaf"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="36" y="28" width="1208" height="664" rx="28" fill="#0f1422" stroke="#2d3550" stroke-width="2"/>
+
+  <rect x="72" y="72" width="240" height="24" rx="8" fill="#29314a"/>
+  <rect x="72" y="114" width="160" height="16" rx="6" fill="#222a40"/>
+
+  <g transform="translate(72 168)">
+    <rect width="352" height="164" rx="16" fill="url(#card)"/>
+    <rect x="22" y="22" width="120" height="12" rx="6" fill="#4a5372"/>
+    <rect x="22" y="46" width="96" height="42" rx="8" fill="#2a3350"/>
+    <rect x="132" y="46" width="196" height="8" rx="4" fill="#2b3553"/>
+    <rect x="132" y="62" width="152" height="8" rx="4" fill="#2b3553"/>
+    <rect x="132" y="78" width="176" height="8" rx="4" fill="#2b3553"/>
+    <rect x="22" y="106" width="308" height="36" rx="10" fill="#20283f"/>
+    <rect x="22" y="106" width="182" height="36" rx="10" fill="url(#accent)" opacity="0.28"/>
+  </g>
+
+  <g transform="translate(448 168)">
+    <rect width="760" height="360" rx="16" fill="url(#card)"/>
+    <rect x="28" y="24" width="160" height="12" rx="6" fill="#4a5372"/>
+    <rect x="28" y="50" width="108" height="8" rx="4" fill="#2b3553"/>
+    <polyline points="40,280 132,226 220,246 316,184 412,212 504,150 602,198 708,126"
+      fill="none" stroke="url(#accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="40,300 132,270 220,286 316,244 412,262 504,228 602,250 708,216"
+      fill="none" stroke="#374264" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="36" y1="310" x2="724" y2="310" stroke="#2f3855" stroke-width="2"/>
+  </g>
+
+  <g transform="translate(72 354)">
+    <rect width="352" height="174" rx="16" fill="url(#card)"/>
+    <rect x="22" y="22" width="136" height="12" rx="6" fill="#4a5372"/>
+    <rect x="22" y="52" width="308" height="10" rx="5" fill="#27314d"/>
+    <rect x="22" y="72" width="284" height="10" rx="5" fill="#27314d"/>
+    <rect x="22" y="92" width="196" height="10" rx="5" fill="#27314d"/>
+    <rect x="22" y="124" width="96" height="30" rx="9" fill="#2b3553"/>
+    <rect x="126" y="124" width="88" height="30" rx="9" fill="#20283f"/>
+  </g>
+
+  <g transform="translate(448 548)">
+    <rect width="760" height="84" rx="14" fill="#121a2a" stroke="#2a3150" stroke-width="2"/>
+    <rect x="26" y="22" width="164" height="10" rx="5" fill="#485270"/>
+    <rect x="26" y="44" width="404" height="10" rx="5" fill="#2a3452"/>
+    <circle cx="704" cy="42" r="14" fill="#2a3452"/>
+    <circle cx="738" cy="42" r="14" fill="#2a3452"/>
+  </g>
+</svg>

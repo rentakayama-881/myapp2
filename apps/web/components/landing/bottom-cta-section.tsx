@@ -22,10 +22,10 @@ export function BottomCtaSection({ bottomCta }: BottomCtaSectionProps) {
     <section className="group relative grid min-h-96 w-full scroll-mt-8 place-items-center overflow-clip bg-gradient py-fluid-sm">
       <div className="container flex flex-col gap-fluid-sm">
         <div className="flex w-full flex-col items-center gap-y-4 text-center">
-          <div className="-mb-2 text-[11px] font-medium text-foreground/50 uppercase tracking-wider">
+          <div className="-mb-2 font-mono text-[11px] font-medium text-foreground/50 uppercase tracking-wider">
             {bottomCta.overline}
           </div>
-          <h2 className="text-pretty text-3xl font-medium tracking-tighter md:text-4xl">
+          <h2 className="font-display text-pretty text-3xl font-medium tracking-tighter md:text-4xl">
             {bottomCta.heading}
           </h2>
           <p className="max-w-[42.5em] text-pretty text-secondary-foreground [word-break:break-word] md:text-lg">

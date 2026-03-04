@@ -1,6 +1,12 @@
+import Image from 'next/image';
 import Link from 'next/link';
-import type { LandingAction, LandingContent, LandingPricingTier } from '../../types/landing';
-import { MarketingIcons } from '../icons/marketing-icons';
+import type {
+  LandingAction,
+  LandingContent,
+  LandingFeatureIconName,
+  LandingPricingTier,
+} from '../../types/landing';
+import { FeatureIcon, MarketingIcons } from '../icons/marketing-icons';
 
 interface PricingSectionProps {
   pricing: LandingContent['pricing'];
@@ -17,20 +23,33 @@ function actionProps(action: LandingAction) {
   return {};
 }
 
+const BENEFIT_ICONS: LandingFeatureIconName[] = [
+  'code',
+  'credit-card',
+  'sparkles',
+  'globe',
+  'settings',
+  'chart-bar',
+];
+
+function benefitIcon(index: number) {
+  return BENEFIT_ICONS[index % BENEFIT_ICONS.length] ?? 'sparkles';
+}
+
 function PricingCard({ tier }: { tier: LandingPricingTier }) {
   return (
     <div
       className={[
         'flex flex-col gap-6 min-w-[95%] sm:min-w-92 flex-1 snap-center p-6 overflow-clip first:rounded-s-xl last:rounded-e-xl md:p-8 lg:min-w-0 lg:shrink',
         tier.highlighted
-          ? 'relative z-10 -mx-px bg-primary/15 ring ring-inset ring-primary/50 lg:basis-[55%]'
+          ? 'relative z-10 bg-primary/15 ring ring-inset ring-primary/50 -mx-px lg:basis-[55%]'
           : 'ring ring-inset ring-border lg:basis-[45%]',
       ].join(' ')}
     >
       <div className="flex flex-col flex-wrap items-start gap-6">
         <div className="flex w-full flex-col flex-wrap items-start gap-x-1 gap-y-0.5">
           <div className="flex flex-row flex-wrap items-center gap-x-3 gap-y-2 place-content-start">
-            <h4 className="text-pretty text-xl font-medium tracking-tight">{tier.name}</h4>
+            <h4 className="font-display text-pretty text-xl font-medium tracking-tight">{tier.name}</h4>
             {tier.badge ? (
               <div className="rounded-full bg-primary px-2.5 py-0.5 font-mono text-[11px] font-medium tracking-wider text-primary-foreground uppercase">
                 {tier.badge}
@@ -59,9 +78,13 @@ function PricingCard({ tier }: { tier: LandingPricingTier }) {
       <hr className="-mx-8" />
 
       <div className="flex flex-1 flex-col flex-wrap items-start gap-x-4 gap-y-3">
-        {tier.benefits.map((benefit) => (
+        {tier.benefits.map((benefit, index) => (
           <div key={benefit} className="flex flex-row items-start gap-x-3 gap-y-2 place-content-start">
-            <span className="size-4 rounded-md bg-foreground/15" />
+            <FeatureIcon
+              name={benefitIcon(index)}
+              className="lucide size-4"
+              aria-hidden
+            />
             <span className="-mt-0.5 flex-1 text-sm text-secondary-foreground">{benefit}</span>
           </div>
         ))}
@@ -70,7 +93,7 @@ function PricingCard({ tier }: { tier: LandingPricingTier }) {
       <Link
         href={tier.cta.href}
         className={[
-          'group/button inline-flex items-center justify-center gap-[1ch] rounded-lg px-5 py-3 text-sm font-medium text-start whitespace-nowrap hover:z-10 sm:text-base disabled:pointer-events-none disabled:opacity-60',
+          'group/button inline-flex items-center justify-center gap-[1ch] rounded-lg px-5 py-3 text-sm font-medium text-start whitespace-nowrap hover:z-10 sm:text-base mt-2 disabled:pointer-events-none disabled:opacity-60',
           tier.highlighted
             ? 'bg-primary text-primary-foreground hover:opacity-85'
             : 'bg-foreground text-background hover:opacity-85',
@@ -88,10 +111,10 @@ export function PricingSection({ pricing }: PricingSectionProps) {
     <section className="w-full scroll-mt-8 py-fluid-lg" id="pricing">
       <div className="container flex flex-col gap-fluid-sm">
         <div className="flex w-full flex-col items-center gap-y-4 text-center">
-          <div className="-mb-2 text-[12px] font-medium text-foreground/50 uppercase tracking-wider">
+          <div className="-mb-2 font-mono text-[12px] font-medium text-foreground/50 uppercase tracking-wider">
             {pricing.overline}
           </div>
-          <h2 className="text-pretty text-3xl font-medium tracking-tighter md:text-4xl">
+          <h2 className="font-display text-pretty text-3xl font-medium tracking-tighter md:text-4xl">
             {pricing.heading}
           </h2>
           <p className="max-w-2xl text-pretty text-secondary-foreground [word-break:break-word] md:text-lg">
@@ -101,8 +124,13 @@ export function PricingSection({ pricing }: PricingSectionProps) {
           <div className="mt-2 flex flex-row flex-wrap items-center gap-x-2 gap-y-1 rounded-lg border bg-foreground/5 px-2 py-1 text-center text-sm text-secondary-foreground">
             <div className="flex flex-row flex-wrap items-center gap-x-1 gap-y-0.5 font-medium text-green-500/80 animate-pulse">
               <MarketingIcons.gift className="size-4" aria-hidden />
+              {pricing.offerBadge}
             </div>
-            <span>{pricing.offerBadge}</span>
+            <span className="text-xs text-muted-foreground/75">{pricing.offerDivider}</span>
+            {pricing.offerCounterLabel}
+            <span className="inline-flex items-center rounded bg-foreground/20 px-1.5 py-0.5 font-mono text-xs font-medium">
+              {pricing.offerCounterValue}
+            </span>
           </div>
         </div>
 
@@ -111,6 +139,38 @@ export function PricingSection({ pricing }: PricingSectionProps) {
             {pricing.tiers.map((tier) => (
               <PricingCard key={tier.name} tier={tier} />
             ))}
+          </div>
+
+          <div className="text-center font-mono text-[11px] font-medium text-foreground/50 uppercase tracking-wider">
+            {pricing.legalNote}
+          </div>
+
+          <div className="mt-2 flex flex-wrap items-center justify-center gap-y-1 -space-x-1.5 text-center">
+            {pricing.customerAvatars.map((avatarSrc, index) => (
+              <Image
+                key={avatarSrc}
+                alt=""
+                loading="lazy"
+                width="24"
+                height="24"
+                className="size-7 border-[2px] border-background rounded-full"
+                src={avatarSrc}
+                data-avatar={index + 1}
+              />
+            ))}
+
+            <div className="ml-3 flex flex-col flex-wrap items-start gap-x-2 gap-y-1">
+              <div className="flex items-center gap-1">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <MarketingIcons.star
+                    key={index}
+                    className="lucide lucide-star size-3 fill-current text-yellow-500"
+                    aria-hidden
+                  />
+                ))}
+              </div>
+              <p className="text-xs/none text-muted-foreground">{pricing.socialProofLabel}</p>
+            </div>
           </div>
         </div>
       </div>

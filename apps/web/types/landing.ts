@@ -10,7 +10,7 @@ export type LandingFeatureIconName =
   | 'chart-bar'
   | 'cable';
 
-export type LandingSocialIconName = 'github' | 'x' | 'mail';
+export type LandingSocialIconName = 'github' | 'x' | 'bluesky' | 'mail';
 
 export interface LandingAction {
   label: string;
@@ -51,10 +51,13 @@ export interface LandingTestimonialItem {
   name: string;
   role: string;
   source: string;
+  avatar?: string;
+  sourceHref?: string;
 }
 
 export interface LandingStackItem {
   label: string;
+  height: number;
 }
 
 export interface LandingFooterSocialItem {
@@ -88,9 +91,10 @@ export interface LandingContent {
     heading: string;
     subheading: string;
     primaryAction: LandingAction;
-    trustBadge: string;
-    trustText: string;
-    trustCounter: string;
+    promoPulseText: string;
+    socialProofLabel: string;
+    customerAvatars: [string, string, string, string, string];
+    mediaAlt: string;
   };
   stack: {
     overline: string;
@@ -107,10 +111,18 @@ export interface LandingContent {
     heading: string;
     description: string;
     offerBadge: string;
+    offerDivider: string;
+    offerCounterLabel: string;
+    offerCounterValue: string;
+    legalNote: string;
+    socialProofLabel: string;
+    customerAvatars: [string, string, string, string, string];
     tiers: LandingPricingTier[];
   };
   quoteStrip: {
     text: string;
+    authorName: string;
+    authorAvatar: string;
     sourceLabel: string;
     sourceHref: string;
   };
@@ -120,6 +132,7 @@ export interface LandingContent {
     items: LandingFaqItem[];
   };
   testimonials: {
+    overline: string;
     heading: string;
     description: string;
     viewAllAction: LandingAction;

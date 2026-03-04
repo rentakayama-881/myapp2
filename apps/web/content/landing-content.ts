@@ -36,20 +36,28 @@ export const landingContent: LandingContent = {
       label: 'Get Started (sementara)',
       href: '#',
     },
-    trustBadge: '🎁 Placeholder Offer',
-    trustText: 'tested by early users',
-    trustCounter: '3 slots left',
+    promoPulseText: 'placeholder',
+    socialProofLabel: '200+ happy customers',
+    customerAvatars: [
+      '/placeholders/avatar-1.svg',
+      '/placeholders/avatar-2.svg',
+      '/placeholders/avatar-3.svg',
+      '/placeholders/avatar-4.svg',
+      '/placeholders/avatar-5.svg',
+    ],
+    mediaAlt: 'Dashboard',
   },
   stack: {
     overline: 'Built With The Best',
     heading: 'A battle-tested tech stack',
     items: [
-      { label: 'React' },
-      { label: 'Next.js' },
-      { label: 'TypeScript' },
-      { label: 'Tailwind CSS' },
-      { label: 'NestJS' },
-      { label: 'PostgreSQL' },
+      { label: 'React', height: 40 },
+      { label: 'Next.js', height: 24 },
+      { label: 'TypeScript', height: 40 },
+      { label: 'Prisma', height: 32 },
+      { label: 'TailwindCSS', height: 40 },
+      { label: 'Stripe', height: 30 },
+      { label: 'BetterAuth', height: 30 },
     ],
   },
   features: {
@@ -114,6 +122,18 @@ export const landingContent: LandingContent = {
     heading: 'Pay once, build faster',
     description: 'Struktur pricing sementara. Label, benefit, dan harga bisa kamu edit sendiri nanti.',
     offerBadge: 'Promo temporary active',
+    offerDivider: '/',
+    offerCounterLabel: 'tested by early users',
+    offerCounterValue: '3 slots left',
+    legalNote: 'Prices in USD. VAT may apply.',
+    socialProofLabel: '200+ happy customers',
+    customerAvatars: [
+      '/placeholders/avatar-1.svg',
+      '/placeholders/avatar-2.svg',
+      '/placeholders/avatar-3.svg',
+      '/placeholders/avatar-4.svg',
+      '/placeholders/avatar-5.svg',
+    ],
     tiers: [
       {
         name: 'Basic',
@@ -169,6 +189,8 @@ export const landingContent: LandingContent = {
   },
   quoteStrip: {
     text: '“Placeholder quote: validasi AI yang cepat, rapi, dan bisa dipakai untuk keputusan penting.”',
+    authorName: 'Placeholder User',
+    authorAvatar: '/placeholders/avatar-1.svg',
     sourceLabel: 'Source Placeholder',
     sourceHref: '#',
   },
@@ -196,6 +218,7 @@ export const landingContent: LandingContent = {
     ],
   },
   testimonials: {
+    overline: 'Testimonials',
     heading: 'Hundreds of makers love this style',
     description: 'Konten testimonial masih temporary. Silakan ganti nanti dengan data asli.',
     viewAllAction: {
@@ -209,6 +232,7 @@ export const landingContent: LandingContent = {
         name: 'User Placeholder 1',
         role: 'Founder',
         source: 'Community A',
+        avatar: '/placeholders/avatar-2.svg',
       },
       {
         quote:
@@ -216,6 +240,7 @@ export const landingContent: LandingContent = {
         name: 'User Placeholder 2',
         role: 'Engineer',
         source: 'Community B',
+        avatar: '/placeholders/avatar-3.svg',
       },
       {
         quote:
@@ -223,12 +248,14 @@ export const landingContent: LandingContent = {
         name: 'User Placeholder 3',
         role: 'Builder',
         source: 'Community C',
+        avatar: '/placeholders/avatar-4.svg',
       },
       {
         quote: 'Placeholder testimonial: CTA dan card hierarchy-nya jelas, mudah dipahami user baru.',
         name: 'User Placeholder 4',
         role: 'PM',
         source: 'Community D',
+        avatar: '/placeholders/avatar-5.svg',
       },
     ],
   },
@@ -265,6 +292,7 @@ export const landingContent: LandingContent = {
     socialLinks: [
       { label: 'GitHub', href: '#', icon: 'github' },
       { label: 'X', href: '#', icon: 'x' },
+      { label: 'Bluesky', href: '#', icon: 'bluesky' },
       { label: 'Email', href: '#', icon: 'mail' },
     ],
     copyright: `© ${new Date().getFullYear()} aivalid.id. All rights reserved.`,

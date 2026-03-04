@@ -15,7 +15,7 @@ export function FaqSection({ faq }: FaqSectionProps) {
     <section className="w-full scroll-mt-8 pt-fluid-sm py-fluid-lg" id="faq">
       <div className="container flex flex-col gap-fluid-sm">
         <div className="flex w-full flex-col items-center gap-y-4 text-center">
-          <h2 className="text-pretty text-3xl font-medium tracking-tighter md:text-4xl">
+          <h2 className="font-display text-pretty text-3xl font-medium tracking-tighter md:text-4xl">
             {faq.heading}
           </h2>
           <p className="max-w-2xl text-pretty text-secondary-foreground [word-break:break-word] md:text-lg">
@@ -23,37 +23,47 @@ export function FaqSection({ faq }: FaqSectionProps) {
           </p>
         </div>
 
-        <div className="w-full divide-y rounded-xl border">
+        <div className="mx-auto flex w-full max-w-2xl flex-col gap-2 rounded-xl bg-card p-2">
           {faq.items.map((item, index) => {
             const isOpen = openIndex === index;
+            const state = isOpen ? 'open' : 'closed';
 
             return (
-              <div key={item.question} className="bg-background">
+              <div
+                key={item.question}
+                className="rounded-lg bg-background"
+                data-orientation="vertical"
+                data-state={state}
+              >
                 <button
                   type="button"
-                  className="group flex w-full items-start justify-between gap-4 px-4 py-2.5 text-secondary-foreground text-start duration-100 hover:text-foreground"
+                  className="group flex w-full items-start justify-between gap-4 px-4 py-2.5 text-secondary-foreground text-start duration-100 hover:text-foreground data-[state=open]:text-foreground"
                   onClick={() => setOpenIndex((current) => (current === index ? null : index))}
                   aria-expanded={isOpen}
+                  data-orientation="vertical"
+                  data-state={state}
                 >
                   <h4 className="font-medium">{item.question}</h4>
-                  <span
+                  <MarketingIcons.plus
                     className={[
-                      'mt-0.5 inline-flex size-5 items-center justify-center rounded-md border text-muted-foreground transition-transform duration-150',
-                      isOpen ? 'rotate-45 text-foreground' : '',
+                      'lucide lucide-plus mt-0.5 size-5 shrink-0 text-secondary-foreground duration-200',
+                      isOpen ? 'rotate-45' : '',
                     ].join(' ')}
-                  >
-                    <MarketingIcons.plus className="size-3" aria-hidden />
-                  </span>
+                    aria-hidden
+                  />
                 </button>
 
-                <div
-                  className={[
-                    'grid overflow-hidden transition-all duration-200',
-                    isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0',
-                  ].join(' ')}
-                >
-                  <div className="overflow-hidden">
-                    <p className="px-4 pb-4 text-sm text-muted-foreground">{item.answer}</p>
+                <div className="overflow-clip">
+                  <div className="h-max">
+                    <div
+                      className={[
+                        'animate-fade-in overflow-clip',
+                        isOpen ? 'block' : 'hidden',
+                      ].join(' ')}
+                      role="region"
+                    >
+                      <p className="px-4 pb-4 text-sm text-muted-foreground">{item.answer}</p>
+                    </div>
                   </div>
                 </div>
               </div>
