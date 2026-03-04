@@ -1,43 +1,68 @@
-import type { LandingFeature } from '../../types/landing';
-import { MarketingIcon } from '../icons/marketing-icons';
-import { landingTypography } from './landing-typography';
+import type { LandingContent, LandingFeatureItem } from '../../types/landing';
+import { FeatureIcon } from '../icons/marketing-icons';
 
 interface FeaturesSectionProps {
-  features: LandingFeature[];
+  features: LandingContent['features'];
+}
+
+function chunkFeatures(items: LandingFeatureItem[], size: number) {
+  const chunks: LandingFeatureItem[][] = [];
+
+  for (let index = 0; index < items.length; index += size) {
+    chunks.push(items.slice(index, index + size));
+  }
+
+  return chunks;
+}
+
+function FeatureBlock({ item }: { item: LandingFeatureItem }) {
+  return (
+    <div className="flex min-h-48 flex-col flex-wrap items-start gap-x-3 gap-y-2 border-l p-6 text-start sm:justify-end">
+      <FeatureIcon
+        name={item.icon}
+        className="mb-1 size-12 rounded-xl border p-3 text-muted-foreground"
+        aria-hidden
+      />
+      <h4 className="relative text-pretty text-xl font-medium tracking-tight">
+        <span className="absolute -left-6 -ml-0.5 h-7 w-0.75 rounded-full bg-foreground" />
+        {item.title}
+      </h4>
+      <p className="max-w-xs text-sm text-muted-foreground">{item.description}</p>
+    </div>
+  );
 }
 
 export function FeaturesSection({ features }: FeaturesSectionProps) {
+  const mobileColumns = chunkFeatures(features.items, 3);
+
   return (
-    <section className="border-b border-border/60 bg-card/30">
-      <div className="landing-container py-16 md:py-20">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className={`text-foreground ${landingTypography.title}`}>
-            Fondasi validasi AI yang bisa kamu kembangkan
+    <section className="light w-full scroll-mt-8 bg-background py-fluid-lg text-foreground" id="features">
+      <div className="container flex flex-col gap-fluid-sm">
+        <div className="flex w-full flex-col items-center gap-y-4 text-center">
+          <h2 className="text-pretty text-3xl font-medium tracking-tighter md:text-4xl">
+            {features.heading}
           </h2>
-          <p className={`mt-4 ${landingTypography.body}`}>
-            Struktur sementara ini sengaja modular agar konten dan komponen bisa
-            kamu edit cepat tanpa bongkar layout.
+          <p className="max-w-[42.5em] text-pretty text-secondary-foreground [word-break:break-word] md:text-lg">
+            {features.description}
           </p>
         </div>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
-          {features.map((feature) => (
-            <article
-              key={feature.title}
-              className="rounded-2xl border border-border bg-background p-5 shadow-[0_1px_0_0_rgba(255,255,255,0.5)]"
+        <div className="flex w-full snap-x snap-mandatory overflow-x-auto pl-0.5 sm:hidden">
+          {mobileColumns.map((column, index) => (
+            <div
+              key={index}
+              className="flex w-[85%] shrink-0 snap-center flex-col"
             >
-              <span className="inline-flex size-10 items-center justify-center rounded-xl border border-border bg-card text-foreground">
-                <MarketingIcon name={feature.icon} className="size-5" />
-              </span>
-              <h3
-                className={`mt-4 tracking-tight text-foreground ${landingTypography.bodyStrong}`}
-              >
-                {feature.title}
-              </h3>
-              <p className={`mt-2 ${landingTypography.caption}`}>
-                {feature.description}
-              </p>
-            </article>
+              {column.map((item) => (
+                <FeatureBlock key={item.title} item={item} />
+              ))}
+            </div>
+          ))}
+        </div>
+
+        <div className="hidden w-full sm:grid sm:grid-cols-2 lg:grid-cols-3">
+          {features.items.map((item) => (
+            <FeatureBlock key={item.title} item={item} />
           ))}
         </div>
       </div>

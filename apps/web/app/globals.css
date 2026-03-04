@@ -1,33 +1,24 @@
 @import "tailwindcss";
 
-/* =========================
-   Design tokens (Dirstarter-ish)
-   Tailwind v4 theme via CSS vars
-   ========================= */
-
 :root {
-  color-scheme: light;
+  color-scheme: dark;
+  --radius: 0.7rem;
+  --nav-height: 4.5rem;
 
-  /* Make corners a bit sharper (you asked "lancip") */
-  --radius: 0.6rem;
+  --background: oklch(0.14 0.015 265);
+  --foreground: oklch(0.97 0.004 250);
 
-  /* Core colors */
-  --background: oklch(0.985 0.004 95);
-  --foreground: oklch(0.20 0.02 260);
+  --card: oklch(0.18 0.015 265);
+  --muted: oklch(0.22 0.016 265);
+  --muted-foreground: oklch(0.78 0.018 258);
 
-  --card: oklch(1 0 0);
-  --muted: oklch(0.955 0.008 95);
-  --muted-foreground: oklch(0.47 0.03 260);
+  --border: oklch(0.31 0.02 262);
+  --ring: oklch(0.62 0.03 252);
 
-  --border: oklch(0.88 0.012 260);
-  --ring: oklch(0.62 0.02 260);
+  --primary: oklch(0.74 0.13 255);
+  --primary-foreground: oklch(0.15 0.02 260);
+  --secondary-foreground: oklch(0.84 0.02 258);
 
-  --primary: oklch(0.36 0.09 250);
-  --primary-foreground: oklch(0.99 0 0);
-
-  --secondary-foreground: oklch(0.28 0.02 260);
-
-  /* “Rainbow” gradient knobs (for fancy border) */
   --color-1: 262 83% 58%;
   --color-2: 142 71% 45%;
   --color-3: 217 91% 60%;
@@ -35,13 +26,29 @@
   --color-5: 330 81% 60%;
 }
 
-/* Map tokens to Tailwind v4 theme variables */
+.light {
+  color-scheme: light;
+  --background: oklch(0.992 0.002 95);
+  --foreground: oklch(0.22 0.02 260);
+
+  --card: oklch(1 0 0);
+  --muted: oklch(0.965 0.006 95);
+  --muted-foreground: oklch(0.49 0.03 258);
+
+  --border: oklch(0.885 0.012 258);
+  --ring: oklch(0.74 0.02 256);
+
+  --primary: oklch(0.45 0.11 252);
+  --primary-foreground: oklch(0.98 0.002 260);
+  --secondary-foreground: oklch(0.34 0.02 258);
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 6px);
-  --radius-2xl: calc(var(--radius) + 12px);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 10px);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -64,6 +71,7 @@
   body {
     margin: 0;
     padding: 0;
+    min-height: 100%;
   }
 
   html {
@@ -71,33 +79,59 @@
   }
 
   body {
-    @apply min-h-screen bg-background text-foreground antialiased;
+    @apply bg-background text-foreground antialiased;
     font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
       "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-    /* subtle “dirstarter-ish” background */
-    background-image:
-      radial-gradient(900px 600px at 15% 8%, oklch(0.94 0.05 255 / 35%) 0%, transparent 55%),
-      radial-gradient(900px 600px at 85% 10%, oklch(0.95 0.04 140 / 28%) 0%, transparent 55%),
-      linear-gradient(180deg, oklch(0.995 0 0), oklch(0.975 0.004 95));
-    background-attachment: fixed;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 }
-
-/* =========================
-   Layout utilities (like "container", fluid spacing)
-   ========================= */
 
 @utility container {
   @apply mx-auto w-full max-w-(--breakpoint-lg) px-6 lg:px-8;
 }
 
-/* dirstarter has a lot of “py-fluid-*” / “gap-fluid-*” */
+@utility h-nav {
+  height: var(--nav-height);
+}
+
+@utility top-nav {
+  top: var(--nav-height);
+}
+
+@utility z-49 {
+  z-index: 49;
+}
+
+@utility rotate-25 {
+  rotate: 25deg;
+}
+
+@utility w-0\.75 {
+  width: 0.1875rem;
+}
+
+@utility w-dvw {
+  width: 100dvw;
+}
+
 @utility py-fluid-lg {
   @apply py-16 md:py-24;
 }
 
 @utility py-fluid-sm {
   @apply py-10 md:py-14;
+}
+
+@utility pt-fluid-sm {
+  @apply pt-8 md:pt-10;
+}
+
+@utility -mb-fluid-lg {
+  @apply -mb-8 md:-mb-14;
 }
 
 @utility gap-fluid-lg {
@@ -108,19 +142,24 @@
   @apply gap-6 md:gap-8;
 }
 
-/* “bg-gradient” section feel */
 @utility bg-gradient {
   background-image:
+    radial-gradient(1200px 420px at 50% -25%, color-mix(in oklch, var(--primary) 30%, transparent), transparent 65%),
     linear-gradient(
       180deg,
-      color-mix(in oklch, var(--background) 86%, white 14%),
-      color-mix(in oklch, var(--background) 95%, black 5%)
+      color-mix(in oklch, var(--background) 90%, white 10%),
+      color-mix(in oklch, var(--background) 96%, black 4%)
     );
 }
 
-/* =========================
-   Fancy “rainbow border button” ala dirstarter
-   ========================= */
+@utility mask-radial-from-black {
+  mask-image: radial-gradient(circle at center, black 25%, transparent 95%);
+}
+
+@utility mask-radial-to-transparent {
+  -webkit-mask-image: radial-gradient(circle at center, black 25%, transparent 95%);
+  mask-image: radial-gradient(circle at center, black 25%, transparent 95%);
+}
 
 @keyframes rainbow {
   0% {
@@ -148,61 +187,10 @@
   }
 
   .animate-fade-in {
-    animation: fade-in 380ms ease-out both;
+    animation: fade-in 360ms ease-out both;
   }
 
-  /* rainbow outline wrapper: put this on outer element */
-  .rainbow-outline {
-    position: relative;
-    isolation: isolate;
-    border-radius: 999px; /* dirstarter often uses rounded-full on CTA */
-    background-clip: padding-box, border-box, border-box;
-    background-origin: border-box;
-    border: calc(0.125rem) solid transparent;
-    background-image:
-      linear-gradient(var(--background), var(--background)),
-      linear-gradient(
-        180deg,
-        color-mix(in oklch, var(--background) 60%, black 40%),
-        transparent
-      ),
-      linear-gradient(
-        90deg,
-        hsl(var(--color-1)),
-        hsl(var(--color-5)),
-        hsl(var(--color-3)),
-        hsl(var(--color-4)),
-        hsl(var(--color-2))
-      );
-    background-size: auto, auto, 200% 100%;
-  }
-
-  .rainbow-outline::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -20%;
-    z-index: -1;
-    height: 20%;
-    width: 60%;
-    transform: translateX(-50%);
-    filter: blur(0.75rem);
-    border-radius: 999px;
-    background: linear-gradient(
-      90deg,
-      hsl(var(--color-1)),
-      hsl(var(--color-5)),
-      hsl(var(--color-3)),
-      hsl(var(--color-4)),
-      hsl(var(--color-2))
-    );
-    background-size: 200% 100%;
-    animation: rainbow 6s linear infinite;
-    opacity: 0.55;
-  }
-
-  /* nicer focus ring */
   .focus-ring {
-    @apply outline-none ring-2 ring-transparent focus-visible:ring-ring/40;
+    @apply outline-none ring-2 ring-transparent focus-visible:ring-ring/45;
   }
 }

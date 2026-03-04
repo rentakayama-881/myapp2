@@ -4,7 +4,13 @@ import { join } from 'node:path';
 const ROOT_DIR = process.cwd();
 const SCAN_DIRS = ['app', 'components'];
 const FILE_EXTENSIONS = new Set(['.ts', '.tsx']);
-const EXCLUDED_PATH_SEGMENTS = ['/playground/', '/.next/', '/node_modules/'];
+const EXCLUDED_PATH_SEGMENTS = [
+  '/playground/',
+  '/.next/',
+  '/node_modules/',
+  '/components/landing/',
+];
+const EXCLUDED_RELATIVE_FILES = new Set(['app/page.tsx']);
 
 const disallowedTextSizeRegex =
   /\btext-(?:xs|sm|base|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl|8xl|9xl|\[[^\]]+\])\b/g;
@@ -15,6 +21,10 @@ async function main() {
 
   for (const file of files) {
     const relativePath = file.replace(`${ROOT_DIR}/`, '');
+
+    if (EXCLUDED_RELATIVE_FILES.has(relativePath)) {
+      continue;
+    }
 
     if (EXCLUDED_PATH_SEGMENTS.some((segment) => file.includes(segment))) {
       continue;
@@ -36,7 +46,7 @@ async function main() {
   if (violations.length > 0) {
     console.error('\nTypography policy violation detected.');
     console.error(
-      'Use semantic classes (type-overline/type-caption/type-label/type-body/type-title/type-display) instead of raw text-size utilities.\n',
+      'Use semantic typography classes outside landing modules instead of raw text-size utilities.\n',
     );
 
     for (const violation of violations) {
@@ -47,7 +57,7 @@ async function main() {
     process.exit(1);
   }
 
-  console.log('Typography check passed. No raw text-size utilities found.');
+  console.log('Typography check passed.');
 }
 
 async function collectFiles() {

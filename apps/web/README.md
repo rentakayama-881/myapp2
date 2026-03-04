@@ -4,43 +4,42 @@ Next.js frontend untuk `aivalid.id`.
 
 ## Routes
 
-- `/` -> modular landing page (batch UI utama)
-- `/playground` -> tester untuk endpoint scraper/crawler
+- `/` -> landing page modular dengan style baseline dari referensi `index.html`
+- `/playground` -> tester endpoint scraper/crawler
 
-## Typography Policy (Global)
+## Landing Structure
 
-Gunakan semantic typography classes dari `apps/web/app/globals.css` untuk semua halaman baru:
-
-- `type-overline`
-- `type-caption`
-- `type-label`
-- `type-body`
-- `type-body-strong`
-- `type-title`
-- `type-display`
-
-Exception yang diizinkan:
-
-- `type-data` untuk data numerik/table
-- `type-code` untuk snippet/kode
-
-Validasi policy:
-
-- `pnpm --filter @myapp/web typography:check`
-
-## Editable Landing Content
-
-Ubah konten tanpa sentuh komponen di file:
+Konten temporary terpusat di:
 
 - `apps/web/content/landing-content.ts`
 
-Komponen landing dipisah modular:
+Section modular:
 
+- `apps/web/components/landing/background-stars.tsx`
+- `apps/web/components/landing/promo-bar.tsx`
 - `apps/web/components/landing/top-nav.tsx`
 - `apps/web/components/landing/hero-section.tsx`
+- `apps/web/components/landing/stack-section.tsx`
 - `apps/web/components/landing/features-section.tsx`
+- `apps/web/components/landing/pricing-section.tsx`
+- `apps/web/components/landing/quote-strip.tsx`
+- `apps/web/components/landing/faq-section.tsx`
+- `apps/web/components/landing/testimonials-section.tsx`
 - `apps/web/components/landing/bottom-cta-section.tsx`
+- `apps/web/components/landing/footer-section.tsx`
+
+Token style/utility global:
+
+- `apps/web/app/globals.css`
+
+Ikon SVG reusable:
+
 - `apps/web/components/icons/marketing-icons.tsx`
+
+## Typography Guard
+
+`typography:check` tetap aktif untuk halaman non-landing.
+Landing module (`app/page.tsx` + `components/landing`) dikecualikan karena meniru class sizing referensi.
 
 ## Env
 

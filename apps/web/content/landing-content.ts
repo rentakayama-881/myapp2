@@ -1,59 +1,270 @@
-import { LandingContent } from '../types/landing';
+import type { LandingContent } from '../types/landing';
 
 export const landingContent: LandingContent = {
   brandName: 'aivalid.id',
-  brandTagline: 'AI output validation platform',
+  brandTagline: 'AI output validation',
+  promoBar: {
+    heading: 'Early Access Placeholder — diskon sementara',
+    codePrefix: 'Use code',
+    code: 'TEMP20',
+  },
+  nav: {
+    items: [
+      { label: 'Pricing', href: '#pricing' },
+      { label: 'Features', href: '#features' },
+      { label: 'FAQ', href: '#faq' },
+      { label: 'Testimonials', href: '#testimonials' },
+    ],
+    demoAction: {
+      label: 'Demo',
+      href: '#',
+    },
+    primaryAction: {
+      label: 'CTA Primary (sementara)',
+      href: '#',
+    },
+  },
   hero: {
+    overline: 'Positioning sementara untuk pengguna AI',
     heading:
       'Kamu ngerjain tugas dengan asisten AI tapi hasilnya seringkali tidak valid, tenang, kita selesaikan bareng bareng',
     subheading:
       'Kamu tahu modul, bestpractice, teknik dan ilmu terbaik, tapi seringkali membutuhkan seorang profesional yang memahami seluk beluk di bidangnya guna menyalurkan apa yang kamu pikirkan bisa di implementasikan',
     primaryAction: {
-      label: 'CTA Primary (sementara)',
+      label: 'Get Started (sementara)',
       href: '#',
     },
-    secondaryAction: {
-      label: 'CTA Secondary (sementara)',
-      href: '#',
-    },
+    trustBadge: '🎁 Placeholder Offer',
+    trustText: 'tested by early users',
+    trustCounter: '3 slots left',
   },
-  topNavActions: {
-    primary: {
-      label: 'Masuk (sementara)',
-      href: '#',
-    },
-    secondary: {
-      label: 'Mulai Sekarang (sementara)',
-      href: '#',
-    },
+  stack: {
+    overline: 'Built With The Best',
+    heading: 'A battle-tested tech stack',
+    items: [
+      { label: 'React' },
+      { label: 'Next.js' },
+      { label: 'TypeScript' },
+      { label: 'Tailwind CSS' },
+      { label: 'NestJS' },
+      { label: 'PostgreSQL' },
+    ],
   },
-  features: [
-    {
-      title: 'Validasi Jawaban AI (sementara)',
-      description:
-        'Placeholder feature sementara. Nanti kamu bisa ganti dengan value proposition final yang lebih spesifik.',
-      icon: 'validation',
-    },
-    {
-      title: 'Cek Referensi dan Klaim (sementara)',
-      description:
-        'Placeholder feature sementara. Fokus awal untuk menunjukkan bahwa output AI bisa diverifikasi sebelum dipakai.',
-      icon: 'sources',
-    },
-    {
-      title: 'Review Expert Eksekusi (sementara)',
-      description:
-        'Placeholder feature sementara. Menjembatani ide AI menjadi implementasi yang lebih aman dan dapat dipertanggungjawabkan.',
-      icon: 'expert',
-    },
-  ],
-  bottomCta: {
-    heading: 'Bottom CTA Heading (sementara)',
+  features: {
+    heading: 'Everything you need to succeed',
     description:
-      'Positioning sementara: aivalid.id membantu pengguna AI memvalidasi output sebelum dipakai untuk keputusan penting.',
+      'Ini komponen placeholder yang meniru pola style referensi. Semua konten bisa kamu ganti tanpa ubah struktur komponen.',
+    items: [
+      {
+        title: 'Feature Placeholder 01',
+        description: 'Deskripsi sementara untuk fitur pertama.',
+        icon: 'dollar-sign',
+      },
+      {
+        title: 'Feature Placeholder 02',
+        description: 'Deskripsi sementara untuk fitur kedua.',
+        icon: 'globe',
+      },
+      {
+        title: 'Feature Placeholder 03',
+        description: 'Deskripsi sementara untuk fitur ketiga.',
+        icon: 'languages',
+      },
+      {
+        title: 'Feature Placeholder 04',
+        description: 'Deskripsi sementara untuk fitur keempat.',
+        icon: 'code',
+      },
+      {
+        title: 'Feature Placeholder 05',
+        description: 'Deskripsi sementara untuk fitur kelima.',
+        icon: 'credit-card',
+      },
+      {
+        title: 'Feature Placeholder 06',
+        description: 'Deskripsi sementara untuk fitur keenam.',
+        icon: 'zap',
+      },
+      {
+        title: 'Feature Placeholder 07',
+        description: 'Deskripsi sementara untuk fitur ketujuh.',
+        icon: 'settings',
+      },
+      {
+        title: 'Feature Placeholder 08',
+        description: 'Deskripsi sementara untuk fitur kedelapan.',
+        icon: 'sparkles',
+      },
+      {
+        title: 'Feature Placeholder 09',
+        description: 'Deskripsi sementara untuk fitur kesembilan.',
+        icon: 'chart-bar',
+      },
+      {
+        title: 'Feature Placeholder 10',
+        description: 'Deskripsi sementara untuk fitur kesepuluh.',
+        icon: 'cable',
+      },
+    ],
+  },
+  pricing: {
+    overline: 'Pricing',
+    heading: 'Pay once, build faster',
+    description: 'Struktur pricing sementara. Label, benefit, dan harga bisa kamu edit sendiri nanti.',
+    offerBadge: 'Promo temporary active',
+    tiers: [
+      {
+        name: 'Basic',
+        description: 'Paket dasar untuk mulai cepat',
+        priceLabel: '149',
+        strikeLabel: '199',
+        benefits: [
+          'Temporary benefit one',
+          'Temporary benefit two',
+          'Temporary benefit three',
+          'Temporary benefit four',
+        ],
+        cta: {
+          label: 'Buy Basic (sementara)',
+          href: '#',
+        },
+      },
+      {
+        name: 'Pro',
+        description: 'Paket paling populer untuk scaling',
+        priceLabel: '199',
+        strikeLabel: '249',
+        badge: 'Most Popular',
+        highlighted: true,
+        benefits: [
+          'Everything in Basic, plus (temporary)',
+          'Priority support placeholder',
+          'Advanced workflow placeholder',
+          'Professional review placeholder',
+        ],
+        cta: {
+          label: 'Buy Pro (sementara)',
+          href: '#',
+        },
+      },
+      {
+        name: 'Custom',
+        description: 'Paket implementasi khusus',
+        note: 'From',
+        priceLabel: '999',
+        benefits: [
+          'Everything in Pro, plus (temporary)',
+          'Installation service placeholder',
+          'Custom workflow placeholder',
+          'Dedicated support placeholder',
+        ],
+        cta: {
+          label: 'Contact Us (sementara)',
+          href: '#',
+        },
+      },
+    ],
+  },
+  quoteStrip: {
+    text: '“Placeholder quote: validasi AI yang cepat, rapi, dan bisa dipakai untuk keputusan penting.”',
+    sourceLabel: 'Source Placeholder',
+    sourceHref: '#',
+  },
+  faq: {
+    heading: 'Frequently Asked Questions',
+    description: 'FAQ sementara. Nanti bisa diganti sesuai product truth kamu.',
+    items: [
+      {
+        question: 'Apa yang termasuk di versi awal ini?',
+        answer:
+          'Jawaban sementara: fondasi landing page dan design system style-first sudah siap untuk kamu lanjutkan.',
+      },
+      {
+        question: 'Apakah kontennya bisa diganti tanpa ubah komponen?',
+        answer: 'Bisa. Semua konten utama diletakkan di satu file content agar mudah dikelola.',
+      },
+      {
+        question: 'Apakah ini sudah responsif untuk mobile?',
+        answer: 'Ya. Layout section utama dirancang responsive mengikuti pola referensi.',
+      },
+      {
+        question: 'Bagaimana update style jika nanti berubah?',
+        answer: 'Token style global di globals.css, jadi update visual bisa terpusat tanpa bongkar semua section.',
+      },
+    ],
+  },
+  testimonials: {
+    heading: 'Hundreds of makers love this style',
+    description: 'Konten testimonial masih temporary. Silakan ganti nanti dengan data asli.',
+    viewAllAction: {
+      label: 'View all testimonials',
+      href: '#',
+    },
+    items: [
+      {
+        quote:
+          'Placeholder testimonial: layout ini enak dipakai dan terasa premium meskipun konten masih draft.',
+        name: 'User Placeholder 1',
+        role: 'Founder',
+        source: 'Community A',
+      },
+      {
+        quote:
+          'Placeholder testimonial: struktur komponennya modular, jadi gampang dipindah dan dirangkai ulang.',
+        name: 'User Placeholder 2',
+        role: 'Engineer',
+        source: 'Community B',
+      },
+      {
+        quote:
+          'Placeholder testimonial: visualnya konsisten, ringkas, dan tetap kelihatan modern di mobile.',
+        name: 'User Placeholder 3',
+        role: 'Builder',
+        source: 'Community C',
+      },
+      {
+        quote: 'Placeholder testimonial: CTA dan card hierarchy-nya jelas, mudah dipahami user baru.',
+        name: 'User Placeholder 4',
+        role: 'PM',
+        source: 'Community D',
+      },
+    ],
+  },
+  bottomCta: {
+    overline: 'Join early users',
+    heading: 'Bottom CTA Headline (sementara)',
+    description: 'Bottom CTA Description (sementara).',
     action: {
       label: 'Bottom CTA Button (sementara)',
       href: '#',
     },
+  },
+  footer: {
+    description: 'Landing starter untuk validasi AI, dengan style pattern yang siap kamu kembangkan.',
+    productLinks: [
+      { label: 'Buy Now', href: '#' },
+      { label: 'Demo', href: '#' },
+      { label: 'Pricing', href: '#pricing' },
+      { label: 'Features', href: '#features' },
+      { label: 'Testimonials', href: '#testimonials' },
+    ],
+    resourceLinks: [
+      { label: 'Blog', href: '#' },
+      { label: 'Showcase', href: '#' },
+      { label: 'Changelog', href: '#' },
+      { label: 'Documentation', href: '#' },
+      { label: 'Affiliate', href: '#' },
+    ],
+    legalLinks: [
+      { label: 'Privacy Policy', href: '#' },
+      { label: 'Terms of Service', href: '#' },
+      { label: 'License Policy', href: '#' },
+    ],
+    socialLinks: [
+      { label: 'GitHub', href: '#', icon: 'github' },
+      { label: 'X', href: '#', icon: 'x' },
+      { label: 'Email', href: '#', icon: 'mail' },
+    ],
+    copyright: `© ${new Date().getFullYear()} aivalid.id. All rights reserved.`,
   },
 };
