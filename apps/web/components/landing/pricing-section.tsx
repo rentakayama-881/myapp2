@@ -121,16 +121,20 @@ export function PricingSection({ pricing }: PricingSectionProps) {
             {pricing.description}
           </p>
 
-          <div className="mt-2 flex flex-row flex-wrap items-center gap-x-2 gap-y-1 rounded-lg border bg-foreground/5 px-2 py-1 text-center text-sm text-secondary-foreground">
-            <div className="flex flex-row flex-wrap items-center gap-x-1 gap-y-0.5 font-medium text-green-500/80 animate-pulse">
-              <MarketingIcons.gift className="size-4" aria-hidden />
-              {pricing.offerBadge}
+          <div className="mt-2 flex w-full justify-center">
+            <div className="inline-flex flex-row flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-lg border bg-foreground/5 px-2 py-1 text-center text-sm text-secondary-foreground">
+              <div className="inline-flex flex-row flex-wrap items-center justify-center gap-x-1 gap-y-0.5 font-medium text-green-500/80 animate-pulse whitespace-nowrap">
+                <MarketingIcons.gift className="size-4" aria-hidden />
+                <span>{pricing.offerBadge}</span>
+              </div>
+              <span className="text-secondary-foreground/60" aria-hidden>
+                {pricing.offerDivider}
+              </span>
+              <span className="whitespace-nowrap">{pricing.offerCounterLabel}</span>
+              <span className="inline-flex items-center rounded bg-foreground/20 px-1.5 py-0.5 font-mono text-xs font-medium whitespace-nowrap">
+                {pricing.offerCounterValue}
+              </span>
             </div>
-            <span className="text-xs text-muted-foreground/75">{pricing.offerDivider}</span>
-            {pricing.offerCounterLabel}
-            <span className="inline-flex items-center rounded bg-foreground/20 px-1.5 py-0.5 font-mono text-xs font-medium">
-              {pricing.offerCounterValue}
-            </span>
           </div>
         </div>
 
