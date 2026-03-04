@@ -72,9 +72,16 @@ export interface LandingContent {
     code: string;
   };
   nav: {
-    items: LandingNavItem[];
-    demoAction: LandingAction;
-    primaryAction: LandingAction;
+    desktopLinks: [
+      LandingNavItem,
+      LandingNavItem,
+      LandingNavItem,
+      LandingNavItem,
+      LandingNavItem,
+      LandingNavItem,
+    ];
+    demoLink: LandingAction;
+    primaryCta: LandingAction;
   };
   hero: {
     overline: string;

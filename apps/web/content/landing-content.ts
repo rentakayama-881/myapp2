@@ -9,17 +9,19 @@ export const landingContent: LandingContent = {
     code: 'TEMP20',
   },
   nav: {
-    items: [
+    desktopLinks: [
       { label: 'Pricing', href: '#pricing' },
-      { label: 'Features', href: '#features' },
-      { label: 'FAQ', href: '#faq' },
+      { label: 'Showcase', href: '#' },
       { label: 'Testimonials', href: '#testimonials' },
+      { label: 'Affiliates', href: '#' },
+      { label: 'Changelog', href: '#' },
+      { label: 'Docs', href: '#' },
     ],
-    demoAction: {
+    demoLink: {
       label: 'Demo',
       href: '#',
     },
-    primaryAction: {
+    primaryCta: {
       label: 'CTA Primary (sementara)',
       href: '#',
     },

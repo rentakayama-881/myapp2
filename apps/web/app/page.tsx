@@ -19,9 +19,9 @@ export default function Page() {
       <PromoBar promoBar={landingContent.promoBar} />
       <TopNav
         brandName={landingContent.brandName}
-        items={landingContent.nav.items}
-        demoAction={landingContent.nav.demoAction}
-        primaryAction={landingContent.nav.primaryAction}
+        desktopLinks={landingContent.nav.desktopLinks}
+        demoLink={landingContent.nav.demoLink}
+        primaryCta={landingContent.nav.primaryCta}
       />
 
       <main className="animate-fade-in">
