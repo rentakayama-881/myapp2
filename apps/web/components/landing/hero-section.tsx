@@ -44,12 +44,20 @@ export function HeroSection({ hero }: HeroSectionProps) {
             </Link>
           </div>
 
-          <div className="flex gap-x-2 gap-y-1 flex-row items-center place-content-start flex-wrap text-sm text-secondary-foreground text-center">
-            <div className="flex gap-x-1 gap-y-0.5 flex-row items-center place-content-start flex-wrap font-medium text-green-500/80 animate-pulse">
-              <MarketingIcons.gift className="lucide lucide-gift" aria-hidden />
+          <div className="flex flex-col items-center text-center">
+            <div className="flex gap-x-2 gap-y-1 flex-row items-center place-content-start flex-wrap text-sm text-secondary-foreground text-center">
+              <div className="flex gap-x-1 gap-y-0.5 flex-row items-center place-content-start flex-wrap font-medium text-green-500/80 animate-pulse">
+                <MarketingIcons.gift className="lucide lucide-gift" aria-hidden />
+                {hero.promo.discountLabel}
+              </div>
+              <span className="text-muted-foreground/75 text-xs">{hero.promo.divider}</span>
+              {hero.promo.audienceLabel}{' '}
+              <span className="inline-flex items-center rounded px-1.5 py-0.5 font-mono text-xs font-medium bg-foreground/20 [[href]]:hover:bg-foreground/15">
+                {hero.promo.counterValue} {hero.promo.counterSuffix}
+              </span>
             </div>
-            <span className="block animate-pulse rounded-md bg-foreground/15 w-32">&nbsp;</span>
-            <span className="sr-only">{hero.promoPulseText}</span>
+
+            <p className="mt-1 text-[11px] text-muted-foreground/80">{hero.promo.guaranteeLabel}</p>
           </div>
         </div>
 

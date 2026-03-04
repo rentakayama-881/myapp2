@@ -36,7 +36,14 @@ export const landingContent: LandingContent = {
       label: 'Get Started (sementara)',
       href: '#',
     },
-    promoPulseText: 'placeholder',
+    promo: {
+      discountLabel: '20% off',
+      divider: '/',
+      audienceLabel: 'first 200 customers',
+      counterValue: '3',
+      counterSuffix: 'left',
+      guaranteeLabel: '30-day money-back guarantee',
+    },
     socialProofLabel: '200+ happy customers',
     customerAvatars: [
       '/placeholders/avatar-1.svg',

@@ -76,10 +76,15 @@ export function TopNav({ brandName, desktopLinks, demoLink, primaryCta }: TopNav
     <header
       className="sticky top-0 z-49 duration-100"
       data-scrolled={navRaised ? 'true' : 'false'}
-      data-mobile-open={mobileOpen ? 'true' : 'false'}
     >
       <nav
-        className="container flex items-center gap-4 py-4 h-nav md:gap-6 lg:gap-8"
+        className={[
+          'container flex items-center gap-4 py-4 h-nav md:gap-6 lg:gap-8',
+          'transition-[margin,border-color,background-color,box-shadow,backdrop-filter] duration-200',
+          navRaised
+            ? 'mt-2 rounded-2xl border border-ring/25 bg-background/65 shadow-[0_8px_30px_rgba(0,0,0,0.35)] backdrop-blur-lg'
+            : 'border border-transparent',
+        ].join(' ')}
       >
         <Link
           className="flex gap-x-2 gap-y-1 flex-row items-center place-content-start text-sm hover:opacity-70"
@@ -134,21 +139,21 @@ export function TopNav({ brandName, desktopLinks, demoLink, primaryCta }: TopNav
           className="group/button inline-flex items-center justify-center font-medium text-[0.8125rem] text-start leading-tight whitespace-nowrap rounded-md hover:z-10 disabled:opacity-60 disabled:pointer-events-none text-foreground hover:bg-foreground/10 px-3 py-2 gap-[0.66ch] -mx-3 lg:hidden"
           aria-controls="mobile-nav-panel"
           aria-expanded={mobileOpen}
-          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-label="Toggle menu"
           type="button"
           onClick={() => setMobileOpen((current) => !current)}
         >
           <span className="relative size-5">
             <MarketingIcons.menu
               className={[
-                'lucide lucide-menu absolute inset-0 shrink-0 first:-ml-[0.21425em] last:-mr-[0.21425em] size-[1.1em] size-5 transition-all duration-200',
+                'lucide lucide-menu absolute inset-0 shrink-0 first:-ml-[0.21425em] last:-mr-[0.21425em] size-[1.1em] size-5! transition-all duration-200',
                 mobileOpen ? 'scale-75 -rotate-45 opacity-0' : 'opacity-75',
               ].join(' ')}
               aria-hidden
             />
             <MarketingIcons.close
               className={[
-                'lucide lucide-x absolute inset-0 shrink-0 first:-ml-[0.21425em] last:-mr-[0.21425em] size-[1.1em] size-5 transition-all duration-200',
+                'lucide lucide-x absolute inset-0 shrink-0 first:-ml-[0.21425em] last:-mr-[0.21425em] size-[1.1em] size-5! transition-all duration-200',
                 mobileOpen ? 'scale-100 rotate-0 opacity-75' : 'pointer-events-none scale-75 rotate-45 opacity-0',
               ].join(' ')}
               aria-hidden
@@ -161,7 +166,7 @@ export function TopNav({ brandName, desktopLinks, demoLink, primaryCta }: TopNav
         id="mobile-nav-panel"
         className={[
           'absolute inset-x-0 -z-10 h-dvh bg-background transition-all duration-200 ease-in-out lg:hidden',
-          'top-nav',
+          navRaised ? 'top-[calc(var(--nav-height)+0.5rem)]' : 'top-nav',
           mobileOpen
             ? 'translate-y-0 opacity-100 pointer-events-auto'
             : '-translate-y-full opacity-0 pointer-events-none',

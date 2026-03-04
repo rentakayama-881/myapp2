@@ -91,7 +91,14 @@ export interface LandingContent {
     heading: string;
     subheading: string;
     primaryAction: LandingAction;
-    promoPulseText: string;
+    promo: {
+      discountLabel: string;
+      divider: string;
+      audienceLabel: string;
+      counterValue: string;
+      counterSuffix: string;
+      guaranteeLabel: string;
+    };
     socialProofLabel: string;
     customerAvatars: [string, string, string, string, string];
     mediaAlt: string;
