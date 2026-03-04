@@ -1,0 +1,27 @@
+{
+  "name": "myapp",
+  "private": true,
+  "packageManager": "pnpm@10.11.0",
+  "engines": {
+    "node": ">=24.13.0 <25.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "dev:api": "pnpm --filter @myapp/api dev",
+    "dev:web": "pnpm --filter @myapp/web dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "db:generate": "pnpm --filter @myapp/api prisma:generate",
+    "db:migrate": "pnpm --filter @myapp/api prisma:migrate:dev",
+    "db:deploy": "pnpm --filter @myapp/api prisma:migrate:deploy"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.1",
+    "typescript": "^5.9.3"
+  }
+}
