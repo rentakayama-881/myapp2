@@ -1,7 +1,7 @@
 import type { LandingContent } from '../types/landing';
 
 export const landingContent: LandingContent = {
-  brandName: 'Dirstarter',
+  brandName: 'aivalid.id',
   brandTagline: 'Next.js directory template',
   promoBar: {
     heading: 'Early Bird Discount – 20% off!',
@@ -24,23 +24,23 @@ export const landingContent: LandingContent = {
       rel: 'noopener',
     },
     primaryCta: {
-      label: 'Get Lifetime Access',
+      label: 'Buat akun sekarang',
       href: '#',
     },
   },
   hero: {
-    overline: 'The tech behind OpenAlternative + many more...',
-    heading: 'Build, monetize, and scale directories with Next.js',
+    overline: 'Platform yang mendampingi Anda dalam melakukan suatu oleh bantuan AI...',
+    heading: 'Validasi apa yang Anda kerjakan dengan AI dan Implementasikan apa yang Anda maksud setelah berdiskusi dengan AI ',
     subheading:
-      'A complete, customizable Next.js directory template with built-in payments, SEO, and AI content – pay once, launch unlimited directories.',
+      'Selesaikan masalah yang sedang Anda alami dengan AI, wujudkan hal-hal luar biasa yang Anda pikirkan',
     primaryAction: {
-      label: 'Get Lifetime Access',
+      label: 'Buat akun sekarang',
       href: '#',
     },
     promo: {
-      discountLabel: '20% off',
+      discountLabel: 'Deposit tanpa fee',
       divider: '/',
-      audienceLabel: 'first 200 customers',
+      audienceLabel: 'minimum fee transaksi',
       counterValue: '3',
       counterSuffix: 'left',
       guaranteeLabel: '30-day money-back guarantee',
@@ -71,7 +71,7 @@ export const landingContent: LandingContent = {
   features: {
     heading: 'Everything you need to succeed',
     description:
-      'Build a directory website with built-in Authentication, Admin Panel, Stripe Payments, Blogging, AI Generated Content, and SEO Optimized pages.',
+      'Bangun hal-hal luar biasa secara akurat dan terarah.',
     items: [
       {
         title: 'Multiple Revenue Streams',
@@ -390,7 +390,7 @@ export const landingContent: LandingContent = {
     legalLinks: [
       { label: 'Privacy Policy', href: '#' },
       { label: 'Terms of Service', href: '#' },
-      { label: 'License Policy', href: '#' },
+      { label: 'About', href: '#' },
     ],
     socialLinks: [
       { label: 'GitHub', href: '#', icon: 'github' },
@@ -398,6 +398,6 @@ export const landingContent: LandingContent = {
       { label: 'Bluesky', href: '#', icon: 'bluesky' },
       { label: 'Email', href: '#', icon: 'mail' },
     ],
-    copyright: '© 2026 Dirstarter. All rights reserved.',
+    copyright: '© 2026 AIvalid',
   },
 };
