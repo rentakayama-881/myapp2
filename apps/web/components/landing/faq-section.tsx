@@ -61,10 +61,9 @@ export function FaqSection({ faq }: FaqSectionProps) {
                       data-orientation="vertical"
                       className="animate-fade-in overflow-clip"
                     >
-                      <p
-                        className="px-4 pb-4 text-sm text-muted-foreground [&_a]:underline [&_a]:underline-offset-2"
-                        dangerouslySetInnerHTML={{ __html: item.answerHtml }}
-                      />
+                      {isOpen ? (
+                        <p className="px-4 text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: item.answerHtml }} />
+                      ) : null}
                     </div>
                   </div>
                 </div>

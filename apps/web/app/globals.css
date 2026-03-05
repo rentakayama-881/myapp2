@@ -3,7 +3,16 @@
 :root {
   color-scheme: dark;
   --radius: 0.7rem;
-  --nav-height: 4.5rem;
+  --spacing-nav: 4.5rem;
+  --nav-height: var(--spacing-nav);
+  --spacing-fluid-sm: clamp(2rem, 5vw, 4rem);
+  --spacing-fluid-md: clamp(2.5rem, 7vw, 5rem);
+  --spacing-fluid-lg: clamp(3rem, 9vw, 6rem);
+  --font-weight-medium: 550;
+  --font-inter: Inter;
+  --font-geist-mono: "Geist Mono";
+  --font-sans: var(--font-inter), sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
 
   --background: oklch(0.14 0.015 265);
   --foreground: oklch(0.97 0.004 250);
@@ -24,6 +33,12 @@
   --color-3: 217 91% 60%;
   --color-4: 48 96% 53%;
   --color-5: 330 81% 60%;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --spacing-nav: 3.5rem;
+  }
 }
 
 .light {
@@ -80,8 +95,7 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-      "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+    font-family: var(--font-sans);
   }
 
   a {
@@ -91,7 +105,15 @@
 }
 
 @utility container {
-  @apply mx-auto w-full max-w-(--breakpoint-lg) px-6 lg:px-8;
+  @apply mx-auto w-full;
+  transition-duration: 0.15s;
+  padding-inline: calc(var(--spacing) * 6) !important;
+}
+
+@media (min-width: 80rem) {
+  .container {
+    max-width: var(--container-7xl);
+  }
 }
 
 @utility bg-fd-secondary\/50 {
@@ -99,11 +121,11 @@
 }
 
 @utility h-nav {
-  height: var(--nav-height);
+  height: var(--spacing-nav);
 }
 
 @utility top-nav {
-  top: var(--nav-height);
+  top: var(--spacing-nav);
 }
 
 @utility z-49 {
@@ -127,27 +149,27 @@
 }
 
 @utility py-fluid-lg {
-  @apply py-16 md:py-24;
+  padding-block: var(--spacing-fluid-lg);
 }
 
 @utility py-fluid-sm {
-  @apply py-10 md:py-14;
+  padding-block: var(--spacing-fluid-sm);
 }
 
 @utility pt-fluid-sm {
-  @apply pt-8 md:pt-10;
+  padding-top: var(--spacing-fluid-sm);
 }
 
 @utility -mb-fluid-lg {
-  @apply -mb-8 md:-mb-14;
+  margin-bottom: calc(var(--spacing-fluid-lg) * -1);
 }
 
 @utility gap-fluid-lg {
-  @apply gap-10 md:gap-14;
+  gap: var(--spacing-fluid-lg);
 }
 
 @utility gap-fluid-sm {
-  @apply gap-6 md:gap-8;
+  gap: var(--spacing-fluid-sm);
 }
 
 @utility bg-gradient {
