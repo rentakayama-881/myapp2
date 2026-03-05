@@ -14,7 +14,7 @@ import { landingContent } from '../content/landing-content';
 
 export default function Page() {
   return (
-    <div className="relative flex min-h-screen flex-col bg-black text-foreground">
+    <>
       <div className="bg-fd-secondary/50 p-3 empty:hidden" />
       <BackgroundStars />
       <PromoBar promoBar={landingContent.promoBar} />
@@ -37,6 +37,6 @@ export default function Page() {
       </main>
 
       <FooterSection brandName={landingContent.brandName} footer={landingContent.footer} />
-    </div>
+    </>
   );
 }

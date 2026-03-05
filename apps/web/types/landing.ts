@@ -12,10 +12,26 @@ export type LandingFeatureIconName =
 
 export type LandingSocialIconName = 'github' | 'x' | 'bluesky' | 'mail';
 
+export type LandingPricingBenefitIconName =
+  | 'package-open'
+  | 'lock'
+  | 'brain'
+  | 'credit-card'
+  | 'brush'
+  | 'pen-tool'
+  | 'globe'
+  | 'mail'
+  | 'life-buoy'
+  | 'headphones'
+  | 'bot'
+  | 'sparkles'
+  | 'wrench';
+
 export interface LandingAction {
   label: string;
   href: string;
   external?: boolean;
+  rel?: string;
 }
 
 export interface LandingNavItem {
@@ -29,34 +45,43 @@ export interface LandingFeatureItem {
   icon: LandingFeatureIconName;
 }
 
+export interface LandingPricingBenefit {
+  label: string;
+  icon?: LandingPricingBenefitIconName;
+  tooltip?: string;
+}
+
 export interface LandingPricingTier {
+  id: 'basic' | 'pro' | 'custom';
   name: string;
   description: string;
   priceLabel: string;
   strikeLabel?: string;
   note?: string;
   badge?: string;
-  highlighted?: boolean;
-  benefits: string[];
+  benefits: LandingPricingBenefit[];
   cta: LandingAction;
 }
 
 export interface LandingFaqItem {
   question: string;
-  answer: string;
+  answerHtml: string;
 }
 
 export interface LandingTestimonialItem {
   quote: string;
   name: string;
-  role: string;
   source: string;
   avatar?: string;
   sourceHref?: string;
+  quoteHref?: string;
+  quoteRel?: string;
 }
 
 export interface LandingStackItem {
   label: string;
+  src: string;
+  width: number;
   height: number;
 }
 
@@ -124,7 +149,7 @@ export interface LandingContent {
     legalNote: string;
     socialProofLabel: string;
     customerAvatars: [string, string, string, string, string];
-    tiers: LandingPricingTier[];
+    tiers: [LandingPricingTier, LandingPricingTier, LandingPricingTier];
   };
   quoteStrip: {
     text: string;

@@ -102,18 +102,17 @@ export const MarketingIcons = {
   ),
   penTool: (props: IconProps) => (
     <svg viewBox="0 0 24 24" {...svgProps(props)}>
-      <path d="m12 19 7-7 3 3-7 7-3-3z" />
-      <path d="m18 13-1.5-1.5" />
-      <path d="M2 22h7l-7-7v7z" />
-      <path d="m7 17 5-5" />
-      <path d="m12 12 2-2" />
-      <path d="m3 3 4 4" />
+      <path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z" />
+      <path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18" />
+      <path d="m2.3 2.3 7.286 7.286" />
+      <circle cx="11" cy="11" r="2" />
     </svg>
   ),
   brush: (props: IconProps) => (
     <svg viewBox="0 0 24 24" {...svgProps(props)}>
-      <path d="m9.06 11.9 8.04-8.04a2.828 2.828 0 1 1 4 4l-8.04 8.04" />
-      <path d="M7.07 14.93a6 6 0 0 0 8 8l.99-.99a4 4 0 0 0-5.66-5.66l-.99.99a2 2 0 0 1-2.83-2.83l.99-.99a4 4 0 0 0-5.66-5.66l-.99.99a6 6 0 0 0 8.48 8.48z" />
+      <path d="m11 10 3 3" />
+      <path d="M6.5 21A3.5 3.5 0 1 0 3 17.5a2.62 2.62 0 0 1-.708 1.792A1 1 0 0 0 3 21z" />
+      <path d="M9.969 17.031 21.378 5.624a1 1 0 0 0-3.002-3.002L6.967 14.031" />
     </svg>
   ),
   lifeBuoy: (props: IconProps) => (
@@ -128,18 +127,18 @@ export const MarketingIcons = {
   ),
   headphones: (props: IconProps) => (
     <svg viewBox="0 0 24 24" {...svgProps(props)}>
-      <path d="M3 14v-2a9 9 0 1 1 18 0v2" />
-      <path d="M21 18a3 3 0 0 1-3 3h-1v-8h1a3 3 0 0 1 3 3z" />
-      <path d="M3 18a3 3 0 0 0 3 3h1v-8H6a3 3 0 0 0-3 3z" />
+      <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
     </svg>
   ),
   wrench: (props: IconProps) => (
     <svg viewBox="0 0 24 24" {...svgProps(props)}>
-      <path d="M14.7 6.3a4 4 0 0 0 5 5l-8.9 8.9a2 2 0 1 1-2.8-2.8l8.9-8.9a4 4 0 0 0 5-5l-3 3-4-1 1-4z" />
+      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z" />
     </svg>
   ),
+  creditCard: (props: IconProps) => featureIconByName('credit-card', props),
   code: (props: IconProps) => featureIconByName('code', props),
   globe: (props: IconProps) => featureIconByName('globe', props),
+  mail: (props: IconProps) => MarketingIcons.socialMail(props),
   settings: (props: IconProps) => featureIconByName('settings', props),
   sparkles: (props: IconProps) => featureIconByName('sparkles', props),
   socialGithub: (props: IconProps) => (

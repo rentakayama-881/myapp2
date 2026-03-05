@@ -11,7 +11,7 @@ function actionProps(action: LandingAction) {
   if (action.external) {
     return {
       target: '_blank',
-      rel: 'noopener',
+      rel: action.rel ?? 'noopener',
     } as const;
   }
 
@@ -44,7 +44,10 @@ export function HeroSection({ hero }: HeroSectionProps) {
               className="group/button inline-flex items-center justify-center font-medium text-start whitespace-nowrap hover:z-10 disabled:opacity-60 disabled:pointer-events-none relative text-background animate-rainbow hover:opacity-85 bg-[linear-gradient(var(--color-foreground),var(--color-foreground)),linear-gradient(var(--color-background)_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))] bg-[length:200%] [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.125rem)_solid_transparent] before:absolute before:bottom-[-20%] before:left-1/2 before:z-0 before:h-1/5 before:w-3/5 before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))] before:[filter:blur(0.75rem)] py-3 gap-[1ch] rounded-lg text-sm sm:text-base px-6 lg:px-8 lg:py-4 md:min-w-64"
               {...actionProps(hero.primaryAction)}
             >
-              <MarketingIcons.brandMark className="shrink-0 first:-ml-[0.21425em] last:-mr-[0.21425em] size-[1.1em] opacity-75 h-5 w-auto fill-current" aria-hidden />
+              <MarketingIcons.brandMark
+                className="shrink-0 first:-ml-[0.21425em] last:-mr-[0.21425em] size-[1.1em] opacity-75 h-5 w-auto fill-current"
+                aria-hidden
+              />
               <span className="flex-1 truncate only:text-center has-[div]:contents">{hero.primaryAction.label}</span>
             </Link>
           </div>
@@ -99,7 +102,7 @@ export function HeroSection({ hero }: HeroSectionProps) {
             width="2560"
             height="1440"
             className="w-full max-h-96 aspect-2-1 object-cover object-top rounded-t-xl ring-8 ring-foreground/10 select-none opacity-90 md:rounded-t-2xl"
-            src="/placeholders/dashboard-dark.svg"
+            src="/dashboard-dark.webp"
           />
           <div className="absolute inset-0 z-10 bg-linear-to-b from-transparent from-50% to-background/75" />
         </div>

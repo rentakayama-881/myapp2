@@ -31,12 +31,7 @@ export function FaqSection({ faq }: FaqSectionProps) {
             const contentId = `faq-content-${index}`;
 
             return (
-              <div
-                key={item.question}
-                data-state={state}
-                data-orientation="vertical"
-                className="bg-background rounded-lg"
-              >
+              <div key={item.question} data-state={state} data-orientation="vertical" className="bg-background rounded-lg">
                 <button
                   type="button"
                   aria-controls={contentId}
@@ -66,7 +61,10 @@ export function FaqSection({ faq }: FaqSectionProps) {
                       data-orientation="vertical"
                       className="animate-fade-in overflow-clip"
                     >
-                      <p className="px-4 pb-4 text-sm text-muted-foreground">{item.answer}</p>
+                      <p
+                        className="px-4 pb-4 text-sm text-muted-foreground [&_a]:underline [&_a]:underline-offset-2"
+                        dangerouslySetInnerHTML={{ __html: item.answerHtml }}
+                      />
                     </div>
                   </div>
                 </div>

@@ -10,7 +10,7 @@ function actionProps(action: LandingAction) {
   if (action.external) {
     return {
       target: '_blank',
-      rel: 'noopener',
+      rel: action.rel ?? 'noopener',
     } as const;
   }
 
@@ -19,14 +19,12 @@ function actionProps(action: LandingAction) {
 
 export function QuoteStrip({ quoteStrip }: QuoteStripProps) {
   return (
-    <section className="w-full scroll-mt-8 -mt-4 mb-8 py-fluid-sm" id="quote">
+    <section className="w-full scroll-mt-8 py-fluid-sm -mt-4 mb-8" id="quote">
       <div className="container flex flex-col gap-fluid-sm">
-        <div className="mx-auto flex w-full max-w-xl flex-col items-center gap-6 text-center">
-          <blockquote className="text-pretty text-center text-lg/relaxed">
-            {quoteStrip.text}
-          </blockquote>
+        <div className="flex w-full flex-col items-center text-center gap-6 max-w-xl mx-auto">
+          <blockquote className="text-center text-lg/relaxed text-pretty">{quoteStrip.text}</blockquote>
 
-          <div className="flex flex-row flex-wrap items-center gap-x-3 gap-y-2 place-content-start">
+          <div className="flex gap-x-3 gap-y-2 flex-row items-center place-content-start flex-wrap">
             <Image
               alt={quoteStrip.authorName}
               loading="lazy"
@@ -36,7 +34,7 @@ export function QuoteStrip({ quoteStrip }: QuoteStripProps) {
               src={quoteStrip.authorAvatar}
             />
 
-            <div className="text-start text-sm">
+            <div className="text-sm text-start">
               <div className="font-medium">{quoteStrip.authorName}</div>
               <Link
                 className="text-muted-foreground hover:text-foreground"
@@ -44,6 +42,8 @@ export function QuoteStrip({ quoteStrip }: QuoteStripProps) {
                 {...actionProps({
                   label: quoteStrip.sourceLabel,
                   href: quoteStrip.sourceHref,
+                  external: true,
+                  rel: 'noopener',
                 })}
               >
                 {quoteStrip.sourceLabel}

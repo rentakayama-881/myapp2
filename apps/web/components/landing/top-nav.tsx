@@ -16,7 +16,7 @@ function actionProps(action: LandingAction) {
   if (action.external) {
     return {
       target: '_blank',
-      rel: 'noopener',
+      rel: action.rel ?? 'noopener',
     } as const;
   }
 
@@ -53,29 +53,14 @@ export function TopNav({ brandName, desktopLinks, demoLink, primaryCta }: TopNav
     };
   }, []);
 
-  useEffect(() => {
-    if (!mobileOpen) {
-      return;
-    }
-
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-
-    return () => {
-      document.body.style.overflow = previousOverflow;
-    };
-  }, [mobileOpen]);
-
   const handleNavLinkClick = () => {
     setMobileOpen(false);
   };
 
-  const navRaised = isScrolled || mobileOpen;
-
   return (
-    <header className="sticky top-0 z-49 duration-100" data-scrolled={navRaised ? 'true' : 'false'}>
+    <header className="sticky top-0 z-49 duration-100" data-scrolled={isScrolled || mobileOpen ? 'true' : 'false'}>
       <nav className="container flex items-center gap-4 py-4 h-nav md:gap-6 lg:gap-8">
-        <Link className="flex gap-x-2 gap-y-1 flex-row items-center place-content-start text-sm hover:opacity-70" href="/">
+        <Link className="flex gap-x-2 gap-y-1 flex-row items-center place-content-start text-sm hover:opacity-70" href="#">
           <MarketingIcons.brandMark className="w-auto fill-current h-[1.2em]" aria-label="Logo" />
           <span className="font-semibold">{brandName}</span>
         </Link>
@@ -123,36 +108,21 @@ export function TopNav({ brandName, desktopLinks, demoLink, primaryCta }: TopNav
 
         <button
           className="group/button inline-flex items-center justify-center font-medium text-[0.8125rem] text-start leading-tight whitespace-nowrap rounded-md hover:z-10 disabled:opacity-60 disabled:pointer-events-none text-foreground hover:bg-foreground/10 px-3 py-2 gap-[0.66ch] -mx-3 lg:hidden"
-          aria-controls="mobile-nav-panel"
-          aria-expanded={mobileOpen}
           aria-label="Toggle menu"
           type="button"
           onClick={() => setMobileOpen((current) => !current)}
         >
-          <span className="relative size-5">
-            <MarketingIcons.menu
-              className={[
-                'lucide lucide-menu absolute inset-0 shrink-0 first:-ml-[0.21425em] last:-mr-[0.21425em] size-[1.1em] opacity-75 size-5! transition-all duration-200',
-                mobileOpen ? 'rotate-45 scale-75 opacity-0' : 'opacity-75',
-              ].join(' ')}
-              aria-hidden
-            />
-            <MarketingIcons.close
-              className={[
-                'absolute inset-0 shrink-0 first:-ml-[0.21425em] last:-mr-[0.21425em] size-[1.1em] size-5! transition-all duration-200',
-                mobileOpen ? 'opacity-75 scale-100' : 'pointer-events-none opacity-0 scale-75',
-              ].join(' ')}
-              aria-hidden
-            />
-          </span>
+          <MarketingIcons.menu
+            className="lucide lucide-menu shrink-0 first:-ml-[0.21425em] last:-mr-[0.21425em] size-[1.1em] opacity-75 size-5!"
+            aria-hidden
+          />
         </button>
       </nav>
 
       <div
-        id="mobile-nav-panel"
         className={[
           'absolute inset-x-0 top-nav -z-10 h-dvh bg-background transition-all duration-200 ease-in-out lg:hidden',
-          mobileOpen ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-full opacity-0 pointer-events-none',
+          mobileOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0',
         ].join(' ')}
       >
         <nav className="container flex flex-col gap-4 p-6">
