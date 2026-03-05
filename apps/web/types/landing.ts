@@ -100,7 +100,14 @@ export interface LandingContent {
     code: string;
   };
   nav: {
-    desktopLinks: LandingNavItem[];
+    desktopLinks: [
+      LandingNavItem,
+      LandingNavItem,
+      LandingNavItem,
+      LandingNavItem,
+      LandingNavItem,
+      LandingNavItem,
+    ];
     demoLink: LandingAction;
     primaryCta: LandingAction;
   };

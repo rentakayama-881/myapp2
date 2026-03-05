@@ -10,10 +10,12 @@ export const landingContent: LandingContent = {
   },
   nav: {
     desktopLinks: [
-      { label: 'Login', href: '/login' },
-      { label: 'Register', href: '/register' },
-      { label: 'Case', href: '/contoh-halaman-sudahlogin/case' },
-      { label: 'Market', href: '/contoh-halaman-sudahlogin/market' },
+      { label: 'Pricing', href: '#' },
+      { label: 'Showcase', href: '#' },
+      { label: 'Testimonials', href: '#' },
+      { label: 'Affiliates', href: '#' },
+      { label: 'Changelog', href: '#' },
+      { label: 'Docs', href: '#' },
     ],
     demoLink: {
       label: 'Demo',

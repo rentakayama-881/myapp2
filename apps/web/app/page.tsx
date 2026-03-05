@@ -21,6 +21,8 @@ export default function Page() {
       <TopNav
         brandName={landingContent.brandName}
         desktopLinks={landingContent.nav.desktopLinks}
+        demoLink={landingContent.nav.demoLink}
+        primaryCta={landingContent.nav.primaryCta}
       />
 
       <main className="animate-fade-in">
