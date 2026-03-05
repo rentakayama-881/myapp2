@@ -57,8 +57,10 @@ export function TopNav({ brandName, desktopLinks, demoLink, primaryCta }: TopNav
     setMobileOpen(false);
   };
 
+  const hasScrolledState = isScrolled || mobileOpen;
+
   return (
-    <header className="sticky top-0 z-49 duration-100" data-scrolled={isScrolled || mobileOpen ? 'true' : 'false'}>
+    <header className="sticky top-0 z-49 duration-100" data-scrolled={hasScrolledState ? 'true' : undefined}>
       <nav className="container flex items-center gap-4 py-4 h-nav md:gap-6 lg:gap-8">
         <Link className="flex gap-x-2 gap-y-1 flex-row items-center place-content-start text-sm hover:opacity-70" href="#">
           <MarketingIcons.brandMark className="w-auto fill-current h-[1.2em]" aria-label="Logo" />
