@@ -25,7 +25,6 @@ function actionProps(action: LandingAction) {
 
 export function TopNav({ brandName, desktopLinks, demoLink, primaryCta }: TopNavProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -40,27 +39,12 @@ export function TopNav({ brandName, desktopLinks, demoLink, primaryCta }: TopNav
     };
   }, []);
 
-  useEffect(() => {
-    const onScroll = () => {
-      setIsScrolled(window.scrollY > 8);
-    };
-
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-    };
-  }, []);
-
   const handleNavLinkClick = () => {
     setMobileOpen(false);
   };
 
-  const hasScrolledState = isScrolled || mobileOpen;
-
   return (
-    <header className="sticky top-0 z-49 duration-100" data-scrolled={hasScrolledState ? 'true' : undefined}>
+    <header className="sticky top-0 z-49 duration-100">
       <nav className="container flex items-center gap-4 py-4 h-nav md:gap-6 lg:gap-8">
         <Link className="flex gap-x-2 gap-y-1 flex-row items-center place-content-start text-sm hover:opacity-70" href="#">
           <MarketingIcons.brandMark className="w-auto fill-current h-[1.2em]" aria-label="Logo" />

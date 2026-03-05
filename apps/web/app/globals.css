@@ -329,23 +329,4 @@
     @apply outline-none ring-2 ring-transparent focus-visible:ring-ring/45;
   }
 
-  header[data-scrolled] > nav {
-    border: 1px solid transparent;
-    transition:
-      margin 200ms ease,
-      border-color 200ms ease,
-      background-color 200ms ease,
-      box-shadow 200ms ease,
-      backdrop-filter 200ms ease;
-  }
-
-  header[data-scrolled='true'] > nav {
-    margin-top: 0.5rem;
-    border-radius: 1rem;
-    border-color: color-mix(in oklch, var(--color-ring) 35%, transparent);
-    background-color: color-mix(in oklch, var(--color-background) 70%, transparent);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-    -webkit-backdrop-filter: blur(14px);
-    backdrop-filter: blur(14px);
-  }
 }
