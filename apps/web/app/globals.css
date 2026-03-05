@@ -102,6 +102,61 @@
     color: inherit;
     text-decoration: none;
   }
+
+  a,
+  button,
+  label[for],
+  [href] [class*="group-hover"] {
+    transition-timing-function: var(--ease-out);
+    transition-duration: 0.1s;
+    cursor: pointer;
+  }
+
+  strong {
+    font-weight: var(--font-weight-semibold);
+  }
+
+  svg.lucide:not([class*="stroke"]) {
+    stroke-width: 1.75px !important;
+  }
+
+  svg.lucide:not([class*="size-"]):not([class*="h-"]),
+  svg[aria-label*="Icon"]:not([class*="size-"]):not([class*="h-"]) {
+    width: 1em !important;
+    height: 1em !important;
+  }
+
+  [href] svg[class*="arrow-"],
+  [type] svg[class*="arrow-"] {
+    will-change: transform;
+    transition-duration: 0.15s;
+  }
+
+  [href]:hover svg[class*="arrow-right"],
+  [type]:hover svg[class*="arrow-right"] {
+    --tw-translate-x: 0.1em;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+
+  [href]:hover svg[class*="arrow-left"],
+  [type]:hover svg[class*="arrow-left"] {
+    --tw-translate-x: -0.1em;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+
+  [href]:hover svg[class*="arrow-up-right"],
+  [type]:hover svg[class*="arrow-up-right"] {
+    --tw-translate-x: 0.1em;
+    --tw-translate-y: -0.1em;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+
+  [href]:hover svg[class*="arrow-up-left"],
+  [type]:hover svg[class*="arrow-up-left"] {
+    --tw-translate-x: -0.1em;
+    --tw-translate-y: -0.1em;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
 }
 
 @utility container {

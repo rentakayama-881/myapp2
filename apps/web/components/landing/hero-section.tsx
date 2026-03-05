@@ -60,11 +60,9 @@ export function HeroSection({ hero }: HeroSectionProps) {
             <span className="text-muted-foreground/75 text-xs">{hero.promo.divider}</span>
             {hero.promo.audienceLabel}{' '}
             <span className="inline-flex items-center rounded px-1.5 py-0.5 font-mono text-xs font-medium bg-foreground/20 [[href]]:hover:bg-foreground/15">
-              {hero.promo.counterValue} {hero.promo.counterSuffix}
+              {`${hero.promo.counterValue} ${hero.promo.counterSuffix}`}
             </span>
           </div>
-
-          <p className="text-xs text-muted-foreground">{hero.promo.guaranteeLabel}</p>
         </div>
 
         <div className="relative isolate mt-4 -mb-fluid-lg px-2">
