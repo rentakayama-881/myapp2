@@ -1,35 +1,25 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import type { LandingAction, LandingContent } from '../../types/landing';
+import { useEffect, useRef, useState } from 'react';
+import type { LandingContent } from '../../types/landing';
 import { MarketingIcons } from '../icons/marketing-icons';
 
 interface TopNavProps {
   brandName: LandingContent['brandName'];
   desktopLinks: LandingContent['nav']['desktopLinks'];
-  demoLink: LandingContent['nav']['demoLink'];
-  primaryCta: LandingContent['nav']['primaryCta'];
 }
 
-function actionProps(action: LandingAction) {
-  if (action.external) {
-    return {
-      target: '_blank',
-      rel: action.rel ?? 'noopener',
-    } as const;
-  }
-
-  return {};
-}
-
-export function TopNav({ brandName, desktopLinks, demoLink, primaryCta }: TopNavProps) {
+export function TopNav({ brandName, desktopLinks }: TopNavProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [accountOpen, setAccountOpen] = useState(false);
+  const accountMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         setMobileOpen(false);
+        setAccountOpen(false);
       }
     };
 
@@ -39,9 +29,30 @@ export function TopNav({ brandName, desktopLinks, demoLink, primaryCta }: TopNav
     };
   }, []);
 
+  useEffect(() => {
+    const onDocumentClick = (event: MouseEvent) => {
+      if (!accountMenuRef.current) {
+        return;
+      }
+
+      if (!accountMenuRef.current.contains(event.target as Node)) {
+        setAccountOpen(false);
+      }
+    };
+
+    document.addEventListener('click', onDocumentClick);
+
+    return () => {
+      document.removeEventListener('click', onDocumentClick);
+    };
+  }, []);
+
   const handleNavLinkClick = () => {
     setMobileOpen(false);
+    setAccountOpen(false);
   };
+
+  const accountMenuItems = ['account', 'mycase', 'mypurchase', 'withdraw', 'signout'] as const;
 
   return (
     <header className="sticky top-0 z-49 duration-100">
@@ -64,32 +75,48 @@ export function TopNav({ brandName, desktopLinks, demoLink, primaryCta }: TopNav
               {item.label}
             </Link>
           ))}
-          <Link
-            className="font-medium text-foreground hover:text-secondary-foreground text-sm md:hidden"
-            href={demoLink.href}
-            onClick={handleNavLinkClick}
-            {...actionProps(demoLink)}
-          >
-            {demoLink.label}
-          </Link>
         </div>
 
-        <div className="flex gap-x-2 gap-y-1 flex-row items-center place-content-start ml-auto">
-          <Link
-            href={demoLink.href}
-            className="group/button inline-flex items-center justify-center font-medium text-[0.8125rem] text-start leading-tight whitespace-nowrap hover:z-10 disabled:opacity-60 disabled:pointer-events-none text-foreground hover:bg-foreground/10 px-3 py-2 gap-[0.66ch] rounded-full max-md:hidden"
-            {...actionProps(demoLink)}
-          >
-            <span className="flex-1 truncate only:text-center has-[div]:contents">{demoLink.label}</span>
-          </Link>
+        <div className="flex gap-x-2 gap-y-1 flex-row items-center place-content-start ml-auto max-lg:hidden">
+          <div ref={accountMenuRef} className="relative">
+            <button
+              type="button"
+              className="group/button inline-flex items-center justify-center font-medium text-[0.8125rem] text-start leading-tight whitespace-nowrap hover:z-10 disabled:opacity-60 disabled:pointer-events-none text-foreground hover:bg-foreground/10 px-3 py-2 gap-[0.66ch] rounded-full"
+              onClick={() => setAccountOpen((state) => !state)}
+              aria-expanded={accountOpen}
+              aria-haspopup="menu"
+            >
+              <span className="flex-1 truncate only:text-center has-[div]:contents">username_demo</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="lucide lucide-chevrons-up-down size-[1.1em] opacity-75"
+                aria-hidden
+              >
+                <path d="m7 15 5 5 5-5" />
+                <path d="m7 9 5-5 5 5" />
+              </svg>
+            </button>
 
-          <Link
-            href={primaryCta.href}
-            className="group/button inline-flex items-center justify-center font-medium text-[0.8125rem] text-start leading-tight whitespace-nowrap hover:z-10 disabled:opacity-60 disabled:pointer-events-none relative text-background animate-rainbow hover:opacity-85 bg-[linear-gradient(var(--color-foreground),var(--color-foreground)),linear-gradient(var(--color-background)_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))] bg-[length:200%] [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.125rem)_solid_transparent] before:absolute before:bottom-[-20%] before:left-1/2 before:z-0 before:h-1/5 before:w-3/5 before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))] before:[filter:blur(0.75rem)] px-3 py-2 gap-[0.66ch] rounded-full"
-            {...actionProps(primaryCta)}
-          >
-            <span className="flex-1 truncate only:text-center has-[div]:contents">{primaryCta.label}</span>
-          </Link>
+            {accountOpen ? (
+              <div className="absolute right-0 mt-2 w-44 rounded-lg border border-border bg-card p-1.5 shadow-lg" role="menu">
+                {accountMenuItems.map((item) => (
+                  <button
+                    key={item}
+                    type="button"
+                    className="block w-full rounded-md px-2.5 py-2 text-left text-sm text-secondary-foreground hover:bg-foreground/10 hover:text-foreground"
+                    role="menuitem"
+                  >
+                    {item}
+                  </button>
+                ))}
+              </div>
+            ) : null}
+          </div>
         </div>
 
         <button
@@ -123,14 +150,18 @@ export function TopNav({ brandName, desktopLinks, demoLink, primaryCta }: TopNav
                 {item.label}
               </Link>
             ))}
-            <Link
-              className="font-medium text-foreground hover:text-secondary-foreground md:hidden"
-              href={demoLink.href}
-              onClick={handleNavLinkClick}
-              {...actionProps(demoLink)}
-            >
-              {demoLink.label}
-            </Link>
+            <div className="mt-4 h-px w-full bg-border" />
+            <div className="text-sm font-medium text-secondary-foreground">username_demo</div>
+            {accountMenuItems.map((item) => (
+              <button
+                key={item}
+                type="button"
+                className="font-medium text-foreground hover:text-secondary-foreground"
+                onClick={handleNavLinkClick}
+              >
+                {item}
+              </button>
+            ))}
           </div>
         </nav>
       </div>
